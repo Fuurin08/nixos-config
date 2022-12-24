@@ -21,7 +21,7 @@
     in
     {
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        snow = nixpkgs.lib.nixosSystem {
           inherit system;
           modules = [
             ./hosts/snow
@@ -40,7 +40,7 @@
       };
       homeConfigurations = {
         #Desktop
-	      "fuurin" = home-manager.lib.homeManagerConfiguration {
+	      "fuurin@snow" = home-manager.lib.homeManagerConfiguration {
 	        pkgs = nixpkgs.legacyPackages."x86_64-linux";
 	        #extraSpecialArgs = { inherit inputs outputs; };
 	        modules = [

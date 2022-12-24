@@ -62,7 +62,7 @@
           col.active_border = rgba(1affffee)
           col.inactive_border = rgba(595959aa)
       
-          cursor_inactive_timeout = 1
+          cursor_inactive_timeout = 2
           
           layout = dwindle
       }
