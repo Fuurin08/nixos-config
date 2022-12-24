@@ -1,0 +1,2 @@
+# NixOS
+Fuurin's NixOS
