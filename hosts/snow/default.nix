@@ -54,7 +54,7 @@
     mutableUsers = true;
     users.fuurin = {
       isNormalUser = true;
-      extraGroups = [ "whell" ];
+      extraGroups = [ "wheel" ];
       #packages = with pkgs; [
       #  
       #];
@@ -89,6 +89,8 @@
     xray
     gnumake
     gcc
+    obs-studio
+    gamescope
     
     #(python38.withPackages(ps: with ps; [ epc six ]))
     (python39.withPackages (p: with p; [
