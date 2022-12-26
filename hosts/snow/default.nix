@@ -91,6 +91,7 @@
     gcc
     obs-studio
     gamescope
+    mangohud
     
     #(python38.withPackages(ps: with ps; [ epc six ]))
     (python39.withPackages (p: with p; [
