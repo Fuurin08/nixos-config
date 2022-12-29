@@ -8,7 +8,6 @@
     ../../modules/waybar/default.nix
     ../../modules/font/font.nix
     ../../modules/fcitx5.nix
-    #../../configuration.nix
   ];
 
   networking = {
@@ -44,10 +43,16 @@
       experimental-features = nix-command flakes
     '';
   };
+
+  services.dbus.enable = true;
   
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    #extraPortals = with pkgs; [
+    #  xdg-desktop-portal-gtk
+    #  xdg-desktop-portal-wlr
+    #];
   };
 
   users = {
@@ -89,6 +94,7 @@
     xray
     gnumake
     gcc
+    killall
     obs-studio
     gamescope
     mangohud
@@ -98,6 +104,13 @@
       epc
       six
     ]))
+
+    tdesktop
+    discord
+    
+    # rust
+    rustc
+    cargo
     
     #lsp-server
     nodePackages_latest.pyright    # python lsp-language-server
