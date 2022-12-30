@@ -20,6 +20,7 @@
   #networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       systemd-boot = {
         enable = true;
