@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../modules/hyprland/home.nix
-    ../modules/waybar/home.nix
+    ../../modules/hyprland/home.nix
+    ../common/desktop
   ];
 
   home = {

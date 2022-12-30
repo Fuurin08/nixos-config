@@ -5,7 +5,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/hyprland/default.nix
-    ../../modules/waybar/default.nix
     ../../modules/font/font.nix
     ../../modules/fcitx5.nix
   ];
