@@ -4,7 +4,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../common/hardware/amdgpu.nix
+    ../common/optional/amdgpu.nix
+    
+    ../common/users/fuurin.nix
     
     ../../modules/hyprland/default.nix
     ../../modules/font/font.nix
@@ -16,10 +18,6 @@
     networkmanager.enable = true;
     firewall.enable = false;
   };
-  #networking.hostName = "snow"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  #networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -55,16 +53,6 @@
     #];
   };
 
-  users = {
-    mutableUsers = true;
-    users.fuurin = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" ];
-      #packages = with pkgs; [
-      #
-      #];
-    };
-  };
 
   nixpkgs.config.allowUnfree = true;
 
