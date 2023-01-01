@@ -3,5 +3,6 @@
 {
   imports = [
     ./waybar.nix
+    ./alacritty.nix
   ];
 }
