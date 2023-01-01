@@ -44,7 +44,7 @@
 	        pkgs = nixpkgs.legacyPackages."x86_64-linux";
 	        #extraSpecialArgs = { inherit inputs outputs; };
 	        modules = [
-	          ./home/user/fuurin.nix
+	          ./home/users/fuurin.nix
 	        ];
         };
       };

@@ -4,6 +4,8 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../common/hardware/amdgpu.nix
+    
     ../../modules/hyprland/default.nix
     ../../modules/font/font.nix
     ../../modules/fcitx5.nix
@@ -33,8 +35,6 @@
       timeout = 5;
     };
     consoleLogLevel = 4;
-    # if you not use amdgpu, you must delete the following line.
-    initrd.kernelModules = [ "amdgpu" ];
   };
 
   nix = {
@@ -45,7 +45,7 @@
   };
 
   services.dbus.enable = true;
-  
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -61,13 +61,13 @@
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       #packages = with pkgs; [
-      #  
+      #
       #];
     };
   };
 
   nixpkgs.config.allowUnfree = true;
-  
+
   programs.steam.enable = true;
   services.v2raya.enable = true;
 
@@ -75,12 +75,13 @@
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  
+
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
-    git 
+    git
     firefox
+    linux-firmware
     chromium
     rofi-wayland
     unzip
@@ -98,7 +99,7 @@
     obs-studio
     gamescope
     mangohud
-    
+
     #(python38.withPackages(ps: with ps; [ epc six ]))
     (python39.withPackages (p: with p; [
       epc
@@ -107,11 +108,11 @@
 
     tdesktop
     discord
-    
+
     # rust
     rustc
     cargo
-    
+
     #lsp-server
     nodePackages_latest.pyright    # python lsp-language-server
     rust-analyzer                  # rust lsp-language-server
@@ -120,7 +121,7 @@
   ];
 
   #networking.firewall.enable = false;
-  
+
   system = {
     autoUpgrade = {
       enable = false;
@@ -129,4 +130,3 @@
     stateVersion = "22.05";
   };
 }
-
