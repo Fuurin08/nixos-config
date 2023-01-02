@@ -4,13 +4,14 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../common/optional/amdgpu.nix
     
     ../common/users/fuurin.nix
     
     ../../modules/hyprland/default.nix
     ../../modules/font/font.nix
-    ../../modules/fcitx5.nix
+    #../../modules/fcitx5.nix
+
+    ../../modules/hardware/amdgpu.nix
   ];
 
   networking = {
@@ -20,7 +21,7 @@
   };
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_xanmod_latest;
     loader = {
       systemd-boot = {
         enable = true;
@@ -76,11 +77,8 @@
     ranger
     emacs
     neofetch
-    alacritty
     aria2
-    waybar
     eww-wayland
-    xray
     gnumake
     gcc
     killall
