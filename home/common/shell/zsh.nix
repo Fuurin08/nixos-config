@@ -8,6 +8,15 @@
 
     };
 
+    #loginExtra = ''
+    #  # If running from tty1 start hyprland
+    #  [ "$(tty)" = "/dev/tty1" ] && exec dbus-run-session Hyprland
+    #'';
+
+    envExtra = "";
+
+    initExtra = "";
+
     history = {
       extended = true;
       ignoreDups = true;
@@ -22,19 +31,14 @@
       searchUpKey = "^[[A";
     };
 
-    enableAutosuggestions = true;
-    enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    #enableAutosuggestions = true;
+    #enableCompletion = true;
+    #enableSyntaxHighlighting = true;
 
     #autocd = true;
 
     #completionInit = "";
-
     dotDir = ".config/zsh";
-
-    envExtra = "";
-
-    initExtra = "";
 
     prezto = {
       enable = true;
@@ -54,18 +58,9 @@
         "history-substring-search"
         "autosuggestions"
         "completion"
-        "tmux"
         "prompt"
       ];
       prompt.theme = "paradox";
-
-      tmux = {
-        autoStartLocal = true;
-        defaultSessionName = "ss";
-      };
     };
   };
-  home.packages = with pkgs; [
-    tmux
-  ];
 }

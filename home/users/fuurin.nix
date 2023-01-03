@@ -4,7 +4,8 @@
   imports = [
     ../../modules/hyprland/home.nix
     ../common/desktop
-    #../common/zsh
+    ../common/shell/zsh.nix
+    ../common/shell/tmux.nix
   ];
 
   home = {

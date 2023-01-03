@@ -5,7 +5,7 @@
     mutableUsers = true;
     users.fuurin = {
       isNormalUser = true;
-      #shell = pkgs.zsh;
+      shell = pkgs.zsh;
       extraGroups = [ "wheel" ];
       #packages = with pkgs; [
       #
