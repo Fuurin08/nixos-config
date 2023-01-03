@@ -4,7 +4,7 @@
   imports = [
     ../../modules/hyprland/home.nix
     ../common/desktop
-    ../common/zsh
+    #../common/zsh
   ];
 
   home = {
