@@ -85,6 +85,8 @@
     obs-studio
     gamescope
     mangohud
+    fd
+    ripgrep
 
     #(python38.withPackages(ps: with ps; [ epc six ]))
     (python39.withPackages (p: with p; [

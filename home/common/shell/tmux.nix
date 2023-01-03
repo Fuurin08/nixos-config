@@ -3,6 +3,6 @@
 {
   programs.tmux = {
     enable = true;
-    shortcut = "c";
+    shortcut = "x";
   };
 }
