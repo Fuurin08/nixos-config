@@ -72,7 +72,6 @@
     firefox
     linux-firmware
     chromium
-    rofi-wayland
     unzip
     ranger
     emacs
