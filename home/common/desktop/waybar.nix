@@ -20,9 +20,9 @@
           "DP-1"
           "HDMI-A-1"
         ];
-        modules-left = [ ];
-        modules-center = [ ];
-        modules-right = [ "network" "disk" "pulseaudio" "cpu" "memory" "tray" "clock" ];
+        modules-left = [ "disk" "network" ];
+        modules-center = [ "clock" ];
+        modules-right = [ "pulseaudio" "cpu" "memory" "tray" ];
 
         "tray" = {
           spacing = 10;
