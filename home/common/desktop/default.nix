@@ -6,5 +6,6 @@
     ./waybar.nix
     ./alacritty.nix
     ./rofi/rofi.nix
+    ./hyprland/home.nix
   ];
 }

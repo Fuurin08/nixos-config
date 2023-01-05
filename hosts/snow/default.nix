@@ -7,10 +7,7 @@
     
     ../common/users/fuurin.nix
     
-    ../../modules/hyprland/default.nix
     ../../modules/font/font.nix
-    #../../modules/fcitx5.nix
-
     ../../modules/hardware/amdgpu.nix
   ];
 
