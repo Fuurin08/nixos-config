@@ -15,7 +15,9 @@
     home-manager.enable = true;
   };
 
+  home.packages = with pkgs; [
+    okular
+  ];
+  
   home.stateVersion = "22.11";
-
-
 }

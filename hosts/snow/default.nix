@@ -88,6 +88,7 @@
     (python39.withPackages (p: with p; [
       epc
       six
+      orjson
       requests
     ]))
 
