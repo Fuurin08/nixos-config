@@ -31,6 +31,7 @@
       timeout = 5;
     };
     consoleLogLevel = 4;
+    supportedFilesystems = [ "btrfs" "ntfs" ];
   };
 
   nix = {
