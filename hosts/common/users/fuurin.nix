@@ -5,14 +5,13 @@
     mutableUsers = true;
     users.fuurin = {
       isNormalUser = true;
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
       extraGroups = [ "wheel" ];
       #packages = with pkgs; [
       #
       #];
     };
     users.fuurin.packages = with pkgs; [
-      qq
-    ];
+      qq    ];
   };
 }
