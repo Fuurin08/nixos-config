@@ -11,5 +11,8 @@
       #
       #];
     };
+    users.fuurin.packages = with pkgs; [
+      qq
+    ];
   };
 }
