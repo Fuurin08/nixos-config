@@ -5,8 +5,6 @@
   imports = [
     ./hardware-configuration.nix
     
-    ../common/users/fuurin.nix
-    
     ../../modules/font/font.nix
     ../../modules/hardware/amdgpu.nix
   ];
@@ -51,6 +49,8 @@
     #  xdg-desktop-portal-wlr
     #];
   };
+
+
 
 
   nixpkgs.config.allowUnfree = true;
