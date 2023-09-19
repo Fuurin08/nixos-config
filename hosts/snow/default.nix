@@ -4,7 +4,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    
+    ../common/users/fuurin.nix 
     ../../modules/font/font.nix
     ../../modules/hardware/amdgpu.nix
   ];
@@ -50,7 +50,11 @@
     #];
   };
 
-
+  #services.xserver = {
+    #enable = true;
+    #displayManager.gdm.enable = false;
+    #desktopManager.gnome.enable = false;
+  #};
 
 
   nixpkgs.config.allowUnfree = true;
@@ -84,14 +88,16 @@
     mangohud
     fd
     ripgrep
+    vscode
+    kitty
 
     #(python38.withPackages(ps: with ps; [ epc six ]))
-    (python39.withPackages (p: with p; [
-      epc
-      six
-      orjson
-      requests
-    ]))
+    #(python39.withPackages (p: with p; [
+    #  epc
+    #  six
+    #  orjson
+    #  requests
+    #]))
 
     tdesktop
     discord

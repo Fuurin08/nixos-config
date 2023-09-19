@@ -3,9 +3,9 @@
 {
   imports = [
     ../common/desktop
-    ../common/shell/zsh.nix
-    ../common/shell/fish.nix
-    ../common/shell/tmux.nix
+    #../common/shell/zsh.nix
+    #../common/shell/fish.nix
+    #../common/shell/tmux.nix
   ];
 
   home = {

@@ -26,27 +26,27 @@
           modules = [
             ./hosts/snow
 
-            #home-manager.nixosModules.home-manager
-            #{
-            #  home-manager.useGlobalPkgs = true;
-            #  home-manager.useUserPackages = true;
-            ##  home-manager.extraSpecialArgs = { inherit user; };
-            #  home-manager.users.fuurin = import ./home/fuurin.nix;
-            #}
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+            #  home-manager.extraSpecialArgs = { inherit user; };
+              home-manager.users.fuurin = import ./home/users/fuurin.nix;
+            }
             hyprland.nixosModules.default
             { programs.hyprland.enable = true; }
           ];
         };
       };
-      homeConfigurations = {
-        #Desktop
-	      "fuurin@snow" = home-manager.lib.homeManagerConfiguration {
-	        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	        #extraSpecialArgs = { inherit inputs outputs; };
-	        modules = [
-	          ./home/users/fuurin.nix
-	        ];
-        };
-      };
+      #homeConfigurations = {
+      #  #Desktop
+      #	      "fuurin@snow" = home-manager.lib.homeManagerConfiguration {
+      #	        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+      #	        #extraSpecialArgs = { inherit inputs outputs; };
+      #	        modules = [
+      #	          ./home/users/fuurin.nix
+      #	        ];
+      #  };
+      #};
     };
 }

@@ -15,7 +15,7 @@
         opacity = 0.7;
         title = "Alacritty";
         dynamic_title = true;
-        decorations_theme_variant = "dark";
+        decorations_theme_variant = "Dark";
       };
       scrolling = {
         history = 10000;
