@@ -60,6 +60,8 @@
     #vscode.fhs
     neovim
     gcc
+    wlroots
+    niri
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -70,6 +72,7 @@
       (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ];
   };
+  
   #########################################
   # List services that you want to enable #
   #########################################
@@ -78,14 +81,31 @@
   services.printing.enable = true;
 
   # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.displayManager.lightdm.enable = false;
+
+  services.xserver.excludePackages = with pkgs; [
+    xterm
+  ];
 
   # Enable the GNOME Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
-
-  # Enable hyprland wm
-  # programs.hyprland.enable = true;
+  # services = {
+  #   xserver = {
+  #     enable = true;
+  #     desktopManager.gnome.enable = true;
+  #     displayManager.gdm = {
+  #       enable = true;
+  #       wayland = true;
+  #     };
+  #   };
+  #   # greetd = {
+  #   #   enable = true;
+  #   # };
+  # };
 
   services.v2raya.enable = true;
 

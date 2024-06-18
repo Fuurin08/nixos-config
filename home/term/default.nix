@@ -19,6 +19,8 @@
 
       enabel_audio_bell = false;
 
+      cursor_shape = "block";
+
       # initial_window_width  = "640";
       # initial_window_height = "400";
 

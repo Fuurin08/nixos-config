@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -19,11 +23,11 @@
     fzf
   ];
 
-  #programs.vscode = {
-  #  enabele = true;
-  #  package = pkgs.vscode.fhs;
-  #};
-  programs.vscode.enable = true;
+  programs.vscode = {
+   enable = true;
+   package = pkgs.vscode.fhs;
+  };
+  # programs.vscode.enable = true;
 
 
 

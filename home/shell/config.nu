@@ -113,6 +113,6 @@ $env.config = {
   float_precision: 2  # 浮点数显示精度为 2 位
   bracketed_paste: true  # 启用括号粘贴
   edit_mode: emacs  # 使用 emacs 编辑模式
-  shell_integration: true  # 启用终端标记和箭头键修复
+  # shell_integration: true  # 启用终端标记和箭头键修复
   render_right_prompt_on_last_line: false  # 不在最后一行显示右提示
 }

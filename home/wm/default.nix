@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }:
 
@@ -11,4 +12,8 @@
     # ./ags
     ./gtk.nix
   ];
+
+  # programs.dconf = {
+  #   enable =true;
+  # };
 }
