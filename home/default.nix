@@ -10,6 +10,7 @@
     ./programs
     ./term
     ./shell
+    ./editors
   ];
 
   home = {
@@ -27,7 +28,7 @@
    enable = true;
    package = pkgs.vscode.fhs;
   };
-  # programs.vscode.enable = true;
+
 
 
 

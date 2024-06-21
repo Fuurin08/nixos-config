@@ -8,6 +8,7 @@
     ./git.nix
     ./fcitx5
     ./firefox
-    ./editors
+    ./btop.nix
+    ./yazi
   ];
 }

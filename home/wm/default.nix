@@ -9,7 +9,7 @@
     ./hypr
     #./rofi
     ./anyrun
-    # ./ags
+    ./ags
     ./gtk.nix
   ];
 
