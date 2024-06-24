@@ -54,12 +54,9 @@
     git
     wget
     neofetch
-    # ranger
-    yazi
-    neovim
     gcc
     wlroots
-    # niri
+    niri
   ];
 
   environment.variables.EDITOR = "nvim";

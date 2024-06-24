@@ -7,6 +7,6 @@
     ./neovim
     ./emacs
     ./helix
-    ./lsp.nix
+    ./packages.nix
   ];
 }
