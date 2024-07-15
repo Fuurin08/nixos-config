@@ -11,6 +11,7 @@
     ./anyrun
     ./ags
     ./gtk.nix
+    ./niri
   ];
 
   # programs.dconf = {

@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:Aylur/ags";
+    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs = {
@@ -25,6 +26,7 @@
     hyprland,
     anyrun,
     ags,
+    niri,
     ...
     }@inputs: 
     let
@@ -37,8 +39,7 @@
         # specialArgs = { inherit inputs; };
         modules = [
           ./hosts/laptop
-          home-manager.nixosModules.home-manager
-          {
+          home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;

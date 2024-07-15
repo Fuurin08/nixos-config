@@ -56,7 +56,6 @@
     neofetch
     gcc
     wlroots
-    niri
   ];
 
   environment.variables.EDITOR = "nvim";
