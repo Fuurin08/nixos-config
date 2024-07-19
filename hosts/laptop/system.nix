@@ -45,6 +45,7 @@
     #jack.enable = true;
   };
 
+
   nix.settings = {
     builders-use-substitutes = true;
     experimental-features = [ "nix-command" "flakes" ];
@@ -66,6 +67,10 @@
     neofetch
     gcc
     wlroots
+    ripgrep
+    fzf
+    pavucontrol   #图形化音量控制
+    cage          #x11
   ];
 
   environment.variables.EDITOR = "nvim";

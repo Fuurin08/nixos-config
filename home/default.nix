@@ -20,13 +20,13 @@
   };
 
   home.packages = with pkgs;[
-    ripgrep
-    fzf
+    # ripgrep
+    # fzf
   ];
 
   programs.vscode = {
    enable = true;
-   package = pkgs.vscode.fhs;
+   package = pkgs.vscode-fhs;
   };
 
 

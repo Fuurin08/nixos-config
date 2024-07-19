@@ -38,7 +38,14 @@
         # inherit system;
         # specialArgs = { inherit inputs; };
         modules = [
+          niri.nixosModules.niri
+          ({pkgs, ...}: {
+            programs.niri.enable = true;
+            nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+            programs.niri.package = pkgs.niri-unstable;
+          })
           ./hosts/laptop
+
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
