@@ -179,8 +179,8 @@ layout {
     struts {
         // left 64
         // right 64
-        // top 64
-        // bottom 64
+        top 12
+        bottom 12
     }
 }
 
@@ -188,11 +188,13 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // spawn-at-startup "alacritty" "-e" "fish"
+spawn-at-startup "fcitx5"
+spawn-at-startup "waybar"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some rounded corners.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.

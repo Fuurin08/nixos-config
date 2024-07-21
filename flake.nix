@@ -15,7 +15,7 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ags.url = "github:Aylur/ags";
+    # ags.url = "github:Aylur/ags";
     niri.url = "github:sodiboo/niri-flake";
   };
 
@@ -25,7 +25,7 @@
     home-manager,
     hyprland,
     anyrun,
-    ags,
+    # ags,
     niri,
     ...
     }@inputs: 
@@ -44,6 +44,7 @@
             nixpkgs.overlays = [ inputs.niri.overlays.niri ];
             programs.niri.package = pkgs.niri-unstable;
           })
+
           ./hosts/laptop
 
           home-manager.nixosModules.home-manager {
