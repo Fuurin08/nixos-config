@@ -19,7 +19,7 @@
     niri.url = "github:sodiboo/niri-flake";
   };
 
-  outputs = {
+  outputs = inputs@{
     self,
     nixpkgs,
     home-manager,
@@ -28,15 +28,10 @@
     # ags,
     niri,
     ...
-    }@inputs: 
-    let
-      system = "x86_64-linux";
-    in
-  {
+  }: {
     nixosConfigurations = {
       snow = nixpkgs.lib.nixosSystem {
-        # inherit system;
-        # specialArgs = { inherit inputs; };
+        system = "x86_64-linux";
         modules = [
           niri.nixosModules.niri
           ({pkgs, ...}: {
@@ -51,7 +46,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = { inherit inputs system; };
+              extraSpecialArgs = inputs;
               users.fuurin = {
                 imports = [
                   ./home
