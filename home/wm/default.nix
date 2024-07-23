@@ -6,7 +6,7 @@
 
 {
   imports = [
-    ./hypr
+    #./hypr
     #./rofi
     ./anyrun
     # ./ags
