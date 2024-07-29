@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ../amdgpu.nix
       ./system.nix
-      # ../../modules/hosts/niri.nix
     ];
 
   # Use the systemd-boot EFI boot loader.

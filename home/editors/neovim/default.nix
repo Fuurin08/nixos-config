@@ -1,28 +1,35 @@
 {
   config,
   pkgs,
+  nixvim,
   ...
 }:
 
 {
+  imports = [
+    nixvim.homeManagerModules.nixvim
+  ];
   home.packages = with pkgs; [
     neovide
   ];
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
-    package = pkgs.neovim-unwrapped;  # 使用 neovim-unwrapped
-    defaultEditor = true;
-
-    viAlias = true;  # 使得 `vi` 命令指向 `nvim`
-    vimAlias = true; # 使得 `vim` 命令指向 `nvim`
-
-    plugins = with pkgs.vimPlugins; [
-      # lazy-nvim
-    ];
   };
+  # programs.neovim = {
+  #   enable = true;
+  #   package = pkgs.neovim-unwrapped;  # 使用 neovim-unwrapped
+  #   defaultEditor = true;
 
-  home.file."${config.xdg.configHome}/nvim" = {
-    source = ./nvim;
-    recursive = true;
-  };
+  #   viAlias = true;  # 使得 `vi` 命令指向 `nvim`
+  #   vimAlias = true; # 使得 `vim` 命令指向 `nvim`
+
+  #   plugins = with pkgs.vimPlugins; [
+  #     # lazy-nvim
+  #   ];
+  # };
+
+  # home.file."${config.xdg.configHome}/nvim" = {
+  #   source = ./nvim;
+  #   recursive = true;
+  # };
 }

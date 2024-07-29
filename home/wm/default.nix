@@ -17,4 +17,5 @@
   # programs.dconf = {
   #   enable =true;
   # };
+  programs.waybar.enable = true;
 }

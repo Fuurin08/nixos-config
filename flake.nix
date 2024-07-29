@@ -11,6 +11,10 @@
     #   url = "github:hyprwm/Hyprland";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +28,7 @@
     nixpkgs,
     home-manager,
     # hyprland,
+    nixvim,
     anyrun,
     # ags,
     niri,

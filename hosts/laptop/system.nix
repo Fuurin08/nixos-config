@@ -70,7 +70,7 @@
     ripgrep
     fzf
     pavucontrol   #图形化音量控制
-    cage          #x11
+    cage          #x11 support
   ];
 
   environment.variables.EDITOR = "nvim";
