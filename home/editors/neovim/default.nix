@@ -1,20 +1,21 @@
 {
   config,
   pkgs,
-  nixvim,
+  nixvim-config,
   ...
 }:
 
 {
-  imports = [
-    nixvim.homeManagerModules.nixvim
-  ];
+  #imports = [
+  #  nixvim.packages.${pkgs.system}.default
+  #];
   home.packages = with pkgs; [
+    nixvim-config.packages.${pkgs.system}.default
     neovide
   ];
-  programs.nixvim = {
-    enable = true;
-  };
+  #programs.nixvim = {
+  #  enable = true;
+  #};
   # programs.neovim = {
   #   enable = true;
   #   package = pkgs.neovim-unwrapped;  # 使用 neovim-unwrapped
