@@ -71,6 +71,7 @@
     fzf
     pavucontrol   #图形化音量控制
     cage          #x11 support
+    brightnessctl #backlight control
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -89,6 +90,10 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # acpi daemon
+  services.acpid.enable = true;
+
+  
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = false;
@@ -117,7 +122,7 @@
   # };
 
   services.v2raya.enable = true;
-
+  
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;

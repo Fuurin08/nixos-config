@@ -22,6 +22,7 @@
   home.packages = with pkgs;[
     # ripgrep
     # fzf
+    # wluma
   ];
 
   programs.vscode = {

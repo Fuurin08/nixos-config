@@ -1,6 +1,15 @@
 {
   description = "My Nixos config";
 
+  #nixConfig = {
+  #  extra-substituters = [
+  #
+  #  ];
+  #  extra-trusted-public-keys = [
+  #
+  #  ];
+  #};
+  
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
     home-manager = {
@@ -11,6 +20,10 @@
     #   url = "github:hyprwm/Hyprland";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim-config.url = "github:Fuurin08/nixvim";
     anyrun = {
       url = "github:Kirottu/anyrun";
@@ -18,17 +31,22 @@
     };
     # ags.url = "github:Aylur/ags";
     niri.url = "github:sodiboo/niri-flake";
+    #nixos-cosmic = {
+    #  url = "github:lilyinstarlight/nixos-cosmic";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = inputs@{
     self,
     nixpkgs,
     home-manager,
+    auto-cpufreq,
     # hyprland,
     nixvim-config,
     anyrun,
-    # ags,
     niri,
+    #nixos-cosmic,
     ...
   }: {
     nixosConfigurations = {
@@ -41,7 +59,10 @@
             nixpkgs.overlays = [ inputs.niri.overlays.niri ];
             programs.niri.package = pkgs.niri-unstable;
           })
+          auto-cpufreq.nixosModules.default
 
+          #nixos-cosmic.nixosModules.default
+          
           ./hosts/laptop
 
           home-manager.nixosModules.home-manager {

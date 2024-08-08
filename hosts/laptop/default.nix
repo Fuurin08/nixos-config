@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../amdgpu.nix
+      ../auto-cpufreq.nix
       ./system.nix
     ];
 
