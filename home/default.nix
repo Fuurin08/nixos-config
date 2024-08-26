@@ -25,6 +25,13 @@
     # wluma
   ];
 
+  programs.obs-studio = {
+    enable = true;
+#    plugins = with pkgs.obs-studio-plugins; [
+#      wlrobs
+#    ];
+  };
+  
   programs.vscode = {
    enable = true;
    package = pkgs.vscode-fhs;

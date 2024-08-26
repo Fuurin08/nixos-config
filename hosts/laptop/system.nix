@@ -31,6 +31,11 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
@@ -45,6 +50,14 @@
     #jack.enable = true;
   };
 
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
+    ];
+  };
 
   nix.settings = {
     builders-use-substitutes = true;
@@ -71,7 +84,7 @@
     fzf
     pavucontrol   #图形化音量控制
     cage          #x11 support
-    brightnessctl #backlight control
+    brightnessctl #backlight control  
   ];
 
   environment.variables.EDITOR = "nvim";

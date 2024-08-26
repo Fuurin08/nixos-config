@@ -6,7 +6,7 @@
   #
   #  ];
   #  extra-trusted-public-keys = [
-  #
+  # 
   #  ];
   #};
   
@@ -31,10 +31,6 @@
     };
     # ags.url = "github:Aylur/ags";
     niri.url = "github:sodiboo/niri-flake";
-    #nixos-cosmic = {
-    #  url = "github:lilyinstarlight/nixos-cosmic";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
   };
 
   outputs = inputs@{
@@ -46,7 +42,6 @@
     nixvim-config,
     anyrun,
     niri,
-    #nixos-cosmic,
     ...
   }: {
     nixosConfigurations = {
@@ -61,8 +56,6 @@
           })
           auto-cpufreq.nixosModules.default
 
-          #nixos-cosmic.nixosModules.default
-          
           ./hosts/laptop
 
           home-manager.nixosModules.home-manager {
