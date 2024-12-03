@@ -92,7 +92,7 @@
   fonts = {
     packages = with pkgs; [
       wqy_zenhei
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
   };
   

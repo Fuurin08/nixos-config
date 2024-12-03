@@ -6,7 +6,7 @@
   #
   #  ];
   #  extra-trusted-public-keys = [
-  # 
+  #
   #  ];
   #};
   
@@ -24,7 +24,11 @@
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim-config.url = "github:Fuurin08/nixvim";
+    #nixvim-config.url = "github:Fuurin08/nixvim";
+    nvix = {
+      url = "github:niksingh710/nvix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +43,8 @@
     home-manager,
     auto-cpufreq,
     # hyprland,
-    nixvim-config,
+    #nixvim-config,
+    nvix,
     anyrun,
     niri,
     ...

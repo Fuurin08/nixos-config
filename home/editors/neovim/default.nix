@@ -1,7 +1,8 @@
 {
   config,
   pkgs,
-  nixvim-config,
+  #nixvim-config,
+  nvix,
   ...
 }:
 
@@ -10,7 +11,8 @@
   #  nixvim.packages.${pkgs.system}.default
   #];
   home.packages = with pkgs; [
-    nixvim-config.packages.${pkgs.system}.default
+    #nixvim-config.packages.${pkgs.system}.default
+    nvix.packages.${pkgs.system}.default        #https://github.com/niksingh710/nvix
     neovide
   ];
   #programs.nixvim = {
