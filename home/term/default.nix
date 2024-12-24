@@ -8,7 +8,7 @@
   programs.kitty = {
     enable = true;
 
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 13;
@@ -32,5 +32,8 @@
 
       shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
     };
+  };
+  programs.zellij = {
+    enable = true;
   };
 }

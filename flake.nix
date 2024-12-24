@@ -9,7 +9,7 @@
   #
   #  ];
   #};
-  
+
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
     home-manager = {
@@ -50,7 +50,11 @@
     ...
   }: {
     nixosConfigurations = {
-      snow = nixpkgs.lib.nixosSystem {
+      snow = let
+        username = "fuurin";
+        specialArgs = {inherit username;};
+      in
+        nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           niri.nixosModules.niri
@@ -61,14 +65,14 @@
           })
           auto-cpufreq.nixosModules.default
 
-          ./hosts/laptop
+          ./hosts/snow
 
           home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              extraSpecialArgs = inputs;
-              users.fuurin = {
+              extraSpecialArgs = inputs // specialArgs;
+              users.${username} = {
                 imports = [
                   ./home
                 ];

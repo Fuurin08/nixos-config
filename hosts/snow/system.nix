@@ -84,7 +84,7 @@
     fzf
     pavucontrol   #图形化音量控制
     cage          #x11 support
-    brightnessctl #backlight control  
+    brightnessctl #backlight control
   ];
 
   environment.variables.EDITOR = "nvim";
