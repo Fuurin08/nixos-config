@@ -72,11 +72,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = inputs // specialArgs;
-              users.${username} = {
-                imports = [
-                  ./home
-                ];
-              };
+              users.${username} = import ./home/users/${username}.nix;
             };
           }
         ];
