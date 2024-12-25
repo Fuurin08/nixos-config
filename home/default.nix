@@ -31,15 +31,22 @@
 #      wlrobs
 #    ];
   };
-  
+
   programs.vscode = {
    enable = true;
    package = pkgs.vscode-fhs;
   };
 
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host github.com
+          Hostname ssh.github.com
+          Port 443
+          User git
+    '';
+  };
 
 
-
-  
   programs.home-manager.enable = true;
 }

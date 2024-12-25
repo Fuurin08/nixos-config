@@ -11,7 +11,7 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     hashedPassword = "$y$j9T$SoPNWsc9Qx3W.3tWd7x7H.$sZqKZS3QCIlNDA1i5jGEoT4fT7ykkVoisPVgPpJwDJ2";
   };
-  
+
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -29,13 +29,13 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
   };
-  
+
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
@@ -95,7 +95,7 @@
       nerd-fonts.jetbrains-mono
     ];
   };
-  
+
   #########################################
   # List services that you want to enable #
   #########################################
@@ -106,7 +106,7 @@
   # acpi daemon
   services.acpid.enable = true;
 
-  
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.displayManager.sddm.enable = false;
@@ -135,7 +135,7 @@
   # };
 
   services.v2raya.enable = true;
-  
+
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
