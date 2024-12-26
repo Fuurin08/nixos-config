@@ -55,28 +55,31 @@
         specialArgs = {inherit username;};
       in
         nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          niri.nixosModules.niri
-          ({pkgs, ...}: {
-            programs.niri.enable = true;
-            nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-            programs.niri.package = pkgs.niri-unstable;
-          })
-          auto-cpufreq.nixosModules.default
+          inherit specialArgs;
+          system = "x86_64-linux";
 
-          ./hosts/snow
+          modules = [
+            niri.nixosModules.niri
+            ({pkgs, ...}: {
+              programs.niri.enable = true;
+              nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+              programs.niri.package = pkgs.niri-unstable;
+            })
+            auto-cpufreq.nixosModules.default
 
-          home-manager.nixosModules.home-manager {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = inputs // specialArgs;
-              users.${username} = import ./home/users/${username}.nix;
-            };
-          }
-        ];
-      };
+            ./hosts/snow
+
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                  #backupFileExtension = "home-manager.backup";
+                extraSpecialArgs = inputs // specialArgs;
+                users.${username} = import ./home/users/${username}.nix;
+              };
+            }
+          ];
+        };
     };
   };
 }

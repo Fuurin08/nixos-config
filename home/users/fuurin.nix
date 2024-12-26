@@ -1,21 +1,28 @@
 {
   config,
   pkgs,
+  username,
   ...
 }:
 
 {
   imports = [
-    ./wm
-    ./programs
-    ./term
-    ./shell
-    ./editors
+    ../wm
+    ../programs
+    ../term
+    ../shell
+    ../editors
   ];
 
+  programs.git = {
+    enable = true;
+    userName = "Fuurin08";
+    userEmail = "zdf1205654975@gmail.com";
+  };
+
   home = {
-    username = "fuurin";
-    homeDirectory = "/home/fuurin";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
     stateVersion = "24.05";
   };
 
@@ -25,12 +32,9 @@
     # wluma
   ];
 
-  programs.obs-studio = {
-    enable = true;
-#    plugins = with pkgs.obs-studio-plugins; [
-#      wlrobs
-#    ];
-  };
+  #programs.obs-studio = {
+  #  enable = true;
+  #};
 
   programs.vscode = {
    enable = true;

@@ -7,6 +7,8 @@
       ../amdgpu.nix
       ../auto-cpufreq.nix
       ./system.nix
+
+      ../../modules/nixos/base
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -48,4 +50,3 @@
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
-

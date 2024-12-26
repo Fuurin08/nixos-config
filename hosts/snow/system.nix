@@ -1,29 +1,15 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.mutableUsers = false;
-  users.users.root = {
-    hashedPassword = "$y$j9T$SoPNWsc9Qx3W.3tWd7x7H.$sZqKZS3QCIlNDA1i5jGEoT4fT7ykkVoisPVgPpJwDJ2";
-  };
-  users.users.fuurin = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    hashedPassword = "$y$j9T$SoPNWsc9Qx3W.3tWd7x7H.$sZqKZS3QCIlNDA1i5jGEoT4fT7ykkVoisPVgPpJwDJ2";
-  };
-
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
   # Set allow unfree software
   nixpkgs.config.allowUnfree = true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
