@@ -5,9 +5,6 @@
 }:
 
 {
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
-
   # Set allow unfree software
   nixpkgs.config.allowUnfree = true;
 
