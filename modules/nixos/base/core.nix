@@ -4,7 +4,7 @@
 }:
 
 {
-    boot = {
+  boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
       efi = {
@@ -17,6 +17,9 @@
       };
       timeout = 5;
     };
-    supportedFilesystems = [ "btrfs" "ntfs" ];
+    supportedFilesystems = [
+      "btrfs"
+      "ntfs"
+    ];
   };
 }

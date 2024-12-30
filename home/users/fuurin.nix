@@ -26,7 +26,7 @@
     stateVersion = "24.05";
   };
 
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # ripgrep
     # fzf
     # wluma
@@ -37,8 +37,8 @@
   #};
 
   programs.vscode = {
-   enable = true;
-   package = pkgs.vscode-fhs;
+    enable = true;
+    package = pkgs.vscode-fhs;
   };
 
   programs.ssh = {
@@ -50,7 +50,6 @@
           User git
     '';
   };
-
 
   programs.home-manager.enable = true;
 }

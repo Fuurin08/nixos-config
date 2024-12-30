@@ -5,34 +5,6 @@
 }:
 
 {
-  # Set allow unfree software
-  nixpkgs.config.allowUnfree = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-  # rtkit is optional but recommended
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-  };
-
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -44,7 +16,10 @@
 
   nix.settings = {
     builders-use-substitutes = true;
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     substituters = [
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
@@ -65,9 +40,8 @@
     wlroots
     ripgrep
     fzf
-    pavucontrol   #图形化音量控制
-    cage          #x11 support
-    brightnessctl #backlight control
+    pavucontrol # 图形化音量控制
+    brightnessctl # backlight control
   ];
 
   environment.variables.EDITOR = "nvim";
@@ -88,7 +62,6 @@
 
   # acpi daemon
   services.acpid.enable = true;
-
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -118,14 +91,5 @@
   # };
 
   services.v2raya.enable = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-    };
-  };
-
 
 }
