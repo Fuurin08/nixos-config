@@ -26,4 +26,9 @@
     powerOnBoot = false;
   };
   services.blueman.enable = true;
+
+  #============== others ============#
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 }

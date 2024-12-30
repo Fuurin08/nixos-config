@@ -1,19 +1,7 @@
 {
-  ...
-}:
-
-{
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    settings = {
-      PermitRootLogin = "no";
-    };
-  };
+  # Use an NTP server located in the mainland of China to synchronize the system time
+  networking.timeServers = [
+    "ntp.aliyun.com" # Aliyun NTP Server
+    "ntp.tencent.com" # Tencent NTP Server
+  ];
 }
