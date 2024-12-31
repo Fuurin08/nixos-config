@@ -6,20 +6,15 @@
   # Set allow unfree software
   nixpkgs.config.allowUnfree = true;
 
-  nix.settings = {
-    builders-use-substitutes = true;
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    substituters = [
-      "https://mirror.sjtu.edu.cn/nix-channels/store"
-      "https://cache.nixos.org"
-    ];
-    trusted-public-keys = [
-      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-    ];
-  };
+  #nix.gc = {
+  #  automatic =  true;
+  #  dates =  "weekly";
+  #  options = "--delete-older-than 7d";
+  #};
+
+  # Manual optimise storage: nix-store --optimise
+  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+  nix.settings.auto-optimise-store = true;
 
   nix.channel.enable = false;
 }

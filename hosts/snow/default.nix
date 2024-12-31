@@ -14,6 +14,7 @@
     ../auto-cpufreq.nix
     ./system.nix
 
+    ../../modules/base.nix
     ../../modules/nixos/base
     ../../modules/nixos/game/steam.nix
     ../../modules/nixos/desktop
