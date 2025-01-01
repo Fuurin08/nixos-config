@@ -2,7 +2,7 @@
   #config,
   pkgs,
   #nixvim-config,
-  khanelivim,
+  nixvim,
   ...
 }:
 
@@ -12,7 +12,8 @@
   #];
   home.packages = with pkgs; [
     #nixvim-config.packages.${pkgs.system}.default
-    khanelivim.packages.${pkgs.system}.default        #https://github.com/niksingh710/nvix
+    #khanelivim.packages.${pkgs.system}.default        #https://github.com/niksingh710/nvix
+    nixvim.packages.${pkgs.system}.default # https://github.com/niksingh710/nvix
     neovide
   ];
   #programs.nixvim = {

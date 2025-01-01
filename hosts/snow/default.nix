@@ -12,9 +12,9 @@
 
     ../amdgpu.nix
     ../auto-cpufreq.nix
-    ./system.nix
+    #./system.nix
 
-    ../../modules/base.nix
+    ../../modules/common
     ../../modules/nixos/base
     ../../modules/nixos/game/steam.nix
     ../../modules/nixos/desktop

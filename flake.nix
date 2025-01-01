@@ -21,10 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     #nixvim-config.url = "github:Fuurin08/nixvim";
-    khanelivim = {
-      url = "github:khaneliman/khanelivim";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:dc-tec/nixvim";
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +38,7 @@
       auto-cpufreq,
       # hyprland,
       #nixvim-config,
-      khanelivim,
+      nixvim,
       anyrun,
       niri,
       ...
