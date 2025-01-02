@@ -7,11 +7,13 @@
 
 {
   imports = [
-    ../wm
-    ../programs
-    ../term
-    ../shell
-    ../editors
+    ../common
+
+    ../linux/wm
+    ../linux/programs
+    ../linux/term
+    ../linux/shell
+    ../linux/editors
   ];
 
   programs.git = {
