@@ -1,10 +1,11 @@
 {
   config,
   pkgs,
-  username,
   ...
 }:
-
+let
+  username = "fuurin";
+in
 {
   imports = [
     ../common

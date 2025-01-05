@@ -3,6 +3,6 @@
     ./fcitx5
     ./firefox
     ./git.nix
-    #./obs.nix
+    ./obs.nix
   ];
 }

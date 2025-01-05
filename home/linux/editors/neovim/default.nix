@@ -2,7 +2,7 @@
   #config,
   pkgs,
   #nixvim-config,
-  nixvim,
+  inputs,
   ...
 }:
 
@@ -12,13 +12,9 @@
   #];
   home.packages = with pkgs; [
     #nixvim-config.packages.${pkgs.system}.default
-    #khanelivim.packages.${pkgs.system}.default        #https://github.com/niksingh710/nvix
-    nixvim.packages.${pkgs.system}.default # https://github.com/niksingh710/nvix
+    inputs.nixvim.packages.${pkgs.system}.default # https://github.com/niksingh710/nvix
     neovide
   ];
-  #programs.nixvim = {
-  #  enable = true;
-  #};
   # programs.neovim = {
   #   enable = true;
   #   package = pkgs.neovim-unwrapped;  # 使用 neovim-unwrapped

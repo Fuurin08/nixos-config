@@ -27,7 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # ags.url = "github:Aylur/ags";
-    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs =
@@ -35,12 +34,6 @@
       self,
       nixpkgs,
       home-manager,
-      auto-cpufreq,
-      # hyprland,
-      #nixvim-config,
-      nixvim,
-      anyrun,
-      niri,
       ...
     }:
     {
@@ -48,23 +41,14 @@
         snow =
           let
             username = "fuurin";
-            specialArgs = { inherit username; };
+            specialArgs = { inherit inputs; };
           in
           nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "x86_64-linux";
 
             modules = [
-              niri.nixosModules.niri
-              (
-                { pkgs, ... }:
-                {
-                  programs.niri.enable = true;
-                  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-                  programs.niri.package = pkgs.niri-unstable;
-                }
-              )
-              auto-cpufreq.nixosModules.default
+              inputs.auto-cpufreq.nixosModules.default
 
               ./hosts/snow
 
@@ -74,7 +58,7 @@
                   useGlobalPkgs = true;
                   useUserPackages = true;
                   #backupFileExtension = "home-manager.backup";
-                  extraSpecialArgs = inputs // specialArgs;
+                  extraSpecialArgs = { inherit inputs; };
                   users.${username} = import ./home/users/${username}.nix;
                 };
               }
