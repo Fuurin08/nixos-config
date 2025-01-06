@@ -14,6 +14,10 @@
     ./niri
   ];
 
+  home.packages = with pkgs; [
+    telegram-desktop
+  ];
+
   # programs.dconf = {
   #   enable =true;
   # };

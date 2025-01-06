@@ -1,9 +1,12 @@
 {
-  auto-cpufreq,
+  inputs,
   ...
 }:
 
 {
+  imports = [
+    inputs.auto-cpufreq.nixosModules.default
+  ];
   programs.auto-cpufreq.enable = true;
 
   programs.auto-cpufreq.settings = {
@@ -11,7 +14,7 @@
       governor = "performance";
       turbo = "auto";
     };
-    
+
     battery = {
       governor = "powersave";
       turbo = "auto";

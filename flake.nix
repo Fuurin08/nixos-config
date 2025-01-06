@@ -1,14 +1,14 @@
 {
   description = "My Nixos config";
 
-  #nixConfig = {
-  #  extra-substituters = [
-  #
-  #  ];
-  #  extra-trusted-public-keys = [
-  #
-  #  ];
-  #};
+  nixConfig = {
+    extra-substituters = [
+      #"https://anyrun.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      #"anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+    ];
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
@@ -48,7 +48,6 @@
             system = "x86_64-linux";
 
             modules = [
-              inputs.auto-cpufreq.nixosModules.default
 
               ./hosts/snow
 

@@ -33,6 +33,7 @@ in
     # ripgrep
     # fzf
     # wluma
+    wiliwili
   ];
 
   #programs.obs-studio = {
