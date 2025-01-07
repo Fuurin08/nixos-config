@@ -6,8 +6,6 @@
 
 {
   imports = [
-    #./hypr
-    #./rofi
     ./anyrun
     # ./ags
     ./gtk.nix
@@ -15,6 +13,7 @@
   ];
 
   home.packages = with pkgs; [
+    wlogout
     telegram-desktop
   ];
 

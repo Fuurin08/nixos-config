@@ -1,7 +1,36 @@
 {
-  # Use an NTP server located in the mainland of China to synchronize the system time
-  networking.timeServers = [
-    "ntp.aliyun.com" # Aliyun NTP Server
-    "ntp.tencent.com" # Tencent NTP Server
-  ];
+  ...
+}:
+
+{
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      Network = {
+        EnableIPv6 = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
+    };
+  };
+
+  # https://man.archlinux.org/man/systemd.network.5
+  systemd.network.networks = {
+    "10-eth0" = {
+      matchConfig.Name = [
+        "en*"
+        "eth*"
+      ];
+      DHCP = "yes";
+      dhcpV4Config.RouteMetric = 128;
+      dhcpV6Config.RouteMetric = 128;
+    };
+    "11-wlan0" = {
+      name = "wlan0";
+      DHCP = "yes";
+      dhcpV4Config.RouteMetric = 2048;
+      dhcpV6Config.RouteMetric = 2048;
+    };
+  };
 }

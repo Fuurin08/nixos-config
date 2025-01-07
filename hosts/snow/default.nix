@@ -21,15 +21,8 @@
   ];
 
   networking.hostName = "snow"; # Define your hostname.
-  # Pick only one of the below networking options.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
-
+  # System Version
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
