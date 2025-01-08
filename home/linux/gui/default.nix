@@ -13,7 +13,7 @@
   ];
 
   home.packages = with pkgs; [
-    wlogout
+    wlogout # logout menu
     telegram-desktop
   ];
 

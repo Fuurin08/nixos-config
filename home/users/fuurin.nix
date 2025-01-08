@@ -10,7 +10,7 @@ in
   imports = [
     ../common
 
-    ../linux/wm
+    ../linux/gui
     ../linux/programs
     ../linux/term
     ../linux/shell
