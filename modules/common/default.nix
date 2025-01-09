@@ -23,9 +23,6 @@
     wget
     curl
     aria2
-
-    pavucontrol # 图形化音量控制
-    brightnessctl # backlight control
   ];
 
   environment.variables.EDITOR = "nvim";
