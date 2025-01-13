@@ -6,6 +6,8 @@
     ./font.nix
   ];
 
+  services.dbus.implementation = "broker";
+
   # fix swaylock cannot be unlocked with the correct password
   security.pam.services.swaylock = { };
 }

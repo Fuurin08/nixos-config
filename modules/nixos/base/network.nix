@@ -3,14 +3,18 @@
 }:
 
 {
-  networking.wireless.iwd = {
-    enable = true;
-    settings = {
-      Network = {
-        EnableIPv6 = true;
-      };
-      Settings = {
-        AutoConnect = true;
+  networking = {
+    useDHCP = false;
+    useNetworkd = true;
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network = {
+          EnableIPv6 = true;
+        };
+        Settings = {
+          AutoConnect = true;
+        };
       };
     };
   };

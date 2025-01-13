@@ -33,15 +33,4 @@
       shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
     };
   };
-  programs.zellij = {
-    enable = true;
-  };
-  programs.atuin = {
-    enable = true;
-    enableBashIntegration = true;
-    enableNushellIntegration = true;
-  };
-  programs.bat = {
-    enable = true;
-  };
 }
