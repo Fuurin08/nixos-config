@@ -3,30 +3,35 @@
 
   nixConfig = {
     extra-substituters = [
-      #"https://anyrun.cachix.org"
+      "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
-      #"anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
 
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     #nixvim-config.url = "github:Fuurin08/nixvim";
     nixvim.url = "github:dc-tec/nixvim";
+
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # ags.url = "github:Aylur/ags";
+
+    ags.url = "github:aylur/ags";
   };
 
   outputs =

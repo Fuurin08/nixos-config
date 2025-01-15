@@ -8,9 +8,9 @@ let
 in
 {
   imports = [
-    ../common
+    ../common/base
 
-    ../linux/gui
+    ../linux/graphic
     ../linux/programs
     ../linux/term
     ../linux/shell

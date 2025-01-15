@@ -8,12 +8,15 @@
   imports = [
     ./gtk.nix
     ./niri
-    ./mako
-    #./ags.nix
+    ./mako.nix
+    #./ags
     ./anyrun.nix
   ];
 
   home.packages = with pkgs; [
+    imv
+
+    swaybg
 
     wl-clipboard-rs
 

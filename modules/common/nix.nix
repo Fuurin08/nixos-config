@@ -5,11 +5,11 @@
 
 {
   nix.settings = {
-    builders-use-substitutes = true;
     experimental-features = [
       "nix-command"
       "flakes"
     ];
+    trusted-users = [ "fuurin" ];
     substituters = [
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
@@ -17,7 +17,7 @@
     trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
     ];
-    #builders-use-substitutes = true;
+    builders-use-substitutes = true;
   };
 
   # auto upgrade nix to the unstable version
