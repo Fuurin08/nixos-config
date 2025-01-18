@@ -6,9 +6,11 @@
 
 {
   imports = [
-    ./gtk.nix
     ./niri
+    ./gtk.nix
     ./mako.nix
+    ./waybar
+    ./swaylock
     #./ags
     ./anyrun.nix
   ];

@@ -1,17 +1,22 @@
 {
+  pkgs,
   ...
 }:
 
 {
   imports = [
     #./ags.nix
-    ./lockscreen.nix
-    ./waybar.nix
-    ./swaybg.nix
+    ./services
   ];
 
-  # logout menu
-  programs.wlogout = {
-    enable = true;
+  home.packages = with pkgs; [
+    niri # windows manager
+    swaybg
+  ];
+
+  xdg.configFile = {
+    "niri/config.kdl" = {
+      source = ./niri.kdl;
+    };
   };
 }

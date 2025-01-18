@@ -4,12 +4,7 @@
 }:
 
 {
-  # lock screen
-  programs.swaylock = {
-    enable = true;
-  };
-  xdg.configFile."swaylock/config".source = ./swaylock.conf;
-
+  #-------------------- lock screen --------------------#
   systemd.user.services.swaylock = {
     Unit = {
       ConditionEnvironment = [
@@ -86,4 +81,7 @@
         }
       ];
     };
+
+  #-------------------- lock screen --------------------#
+
 }

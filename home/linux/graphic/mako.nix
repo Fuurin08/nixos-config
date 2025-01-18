@@ -29,7 +29,7 @@
     padding = "5";
 
     # Color Theme from catppuccin-macha
-    borderSize = 2;
+    borderSize = 4;
     borderRadius = 8;
 
     borderColor = "#89b4fa";
