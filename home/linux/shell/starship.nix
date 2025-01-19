@@ -7,7 +7,6 @@
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
-    # enableZshIntegration = true;
     enableNushellIntegration = true;
 
     settings = {
@@ -19,3 +18,4 @@
   };
   # home.file."${config.xdg.configHome}/starship.toml".source = ./starship.toml;
 }
+

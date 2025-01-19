@@ -8,11 +8,7 @@
   imports = [
     ./niri
     ./gtk.nix
-    ./mako.nix
-    ./waybar
-    ./swaylock
-    #./ags
-    ./anyrun.nix
+    ./gui
   ];
 
   home.packages = with pkgs; [
