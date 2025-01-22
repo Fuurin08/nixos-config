@@ -6,6 +6,7 @@
     ./nix.nix
     ./network.nix
     ./ssh.nix
+    ./auto-cpufreq.nix
   ];
 
   console = {

@@ -1,7 +1,4 @@
 {
-  config,
-  lib,
-  pkgs,
   ...
 }:
 
@@ -9,13 +6,14 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware.nix
+    ./secureboot.nix
 
     ../../modules/hardware/amdgpu.nix
-    ../../modules/hardware/auto-cpufreq.nix
 
     ../../modules/common
 
     ../../modules/nixos/base
+    ../../modules/nixos/auto-cpufreq.nix
     ../../modules/nixos/game
     ../../modules/nixos/desktop
   ];

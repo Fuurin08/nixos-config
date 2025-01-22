@@ -145,10 +145,10 @@ window-rule {
     opacity 0.95
 }
 
-window-rule {
-    match app-id="firefox$"
-    open-maximized true
-}
+//window-rule {
+//    match app-id="firefox$"
+//    open-maximized true
+//}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
