@@ -17,18 +17,6 @@ in
     ../linux/editors
   ];
 
-  programs.git = {
-    enable = true;
-    userName = "Fuurin08";
-    userEmail = "zdf1205654975@gmail.com";
-  };
-
-  home = {
-    username = "${username}";
-    homeDirectory = "/home/${username}";
-    stateVersion = "24.05";
-  };
-
   home.packages = with pkgs; [
     # ripgrep
     # fzf
@@ -36,13 +24,10 @@ in
     wiliwili
   ];
 
-  #programs.obs-studio = {
-  #  enable = true;
-  #};
-
-  programs.vscode = {
+  programs.git = {
     enable = true;
-    package = pkgs.vscode-fhs;
+    userName = "Fuurin08";
+    userEmail = "zdf1205654975@gmail.com";
   };
 
   programs.ssh = {
@@ -53,6 +38,12 @@ in
           Port 443
           User git
     '';
+  };
+
+  home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "24.11";
   };
 
   programs.home-manager.enable = true;
