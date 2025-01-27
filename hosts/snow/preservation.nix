@@ -15,6 +15,7 @@
       directories = [
         "/var/lib"
         "/var/log"
+        "/etc/v2raya"
       ];
       files = [
         {
