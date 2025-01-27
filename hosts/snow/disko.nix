@@ -9,7 +9,6 @@
   ];
 
   fileSystems."/persist".neededForBoot = true;
-  fileSystems."/var/log".neededForBoot = true;
   disko.devices = {
     nodev."/" = {
       fsType = "tmpfs";
@@ -52,10 +51,6 @@
                     mountpoint = "/persist";
                     mountOptions = [ "compress=zstd" ];
                   };
-                  # "@var-log" = {
-                  #   mountpoint = "/var/log";
-                  #   mountOptions = [ "compress=zstd" ];
-                  # };
                 };
               };
             };
