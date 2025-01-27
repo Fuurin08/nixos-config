@@ -6,14 +6,15 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware.nix
-    ./secureboot.nix
+    #./secureboot.nix
+    ./preservation.nix
 
     ../../modules/hardware/amdgpu.nix
 
     ../../modules/common
 
     ../../modules/nixos/base
-    ../../modules/nixos/game
+    #../../modules/nixos/game
     ../../modules/nixos/desktop
   ];
 

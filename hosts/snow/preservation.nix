@@ -10,12 +10,12 @@
   ];
 
   preservation = {
-    enable = false;
+    enable = true;
 
-    preserveAt."/persistent" = {
+    preserveAt."/persist" = {
       directories = [
-        "var/lib"
-        "var/log"
+        "/var/lib"
+        "/var/log"
       ];
       files = [
         {
@@ -50,6 +50,7 @@
           ".cargo"
 
           "nixos"
+          "nixos-config"
 
           # browsers
           ".mozilla"

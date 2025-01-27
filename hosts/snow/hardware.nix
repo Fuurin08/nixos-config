@@ -25,32 +25,35 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f2f355bc-cbb3-42a8-86aa-bfdf3b2775b0";
-    fsType = "btrfs";
-    options = [ "subvol=root" ];
-  };
+  # NOTE:https://blog.decent.id/post/nixos-systemd-initrd/
+  boot.initrd.systemd.enable = true;
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/f2f355bc-cbb3-42a8-86aa-bfdf3b2775b0";
-    fsType = "btrfs";
-    options = [ "subvol=home" ];
+  fileSystems."/" = {
+    device = "tmpfs";
+    fsType = "tmpfs";
+    options = [ "relatime"  "size=25%" "mode=755" ];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/f2f355bc-cbb3-42a8-86aa-bfdf3b2775b0";
+    device = "";
     fsType = "btrfs";
-    options = [ "subvol=nix" ];
+    options = [ "subvol=@nix" "noatime"];
+  };
+
+  fileSystems."/persist" = {
+    device = "";
+    fsType = "btrfs";
+    options = [ "subvol=@persist" ];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/2B6B-16C2";
+    device = "";
     fsType = "vfat";
+    option = [ "fmask=0022" "dmask=0022" ]; 
   };
 
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/9977b10c-5af6-4c8b-8e86-9d05212ab916"; }
-  ];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
