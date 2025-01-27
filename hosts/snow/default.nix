@@ -6,6 +6,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware.nix
+    ./disko.nix
     #./secureboot.nix
     ./preservation.nix
 

@@ -28,32 +28,32 @@
   # NOTE:https://blog.decent.id/post/nixos-systemd-initrd/
   boot.initrd.systemd.enable = true;
 
-  fileSystems."/" = {
-    device = "tmpfs";
-    fsType = "tmpfs";
-    options = [ "relatime"  "size=25%" "mode=755" ];
-  };
+  # fileSystems."/" = {
+  #   device = "tmpfs";
+  #   fsType = "tmpfs";
+  #   options = [ "relatime"  "size=25%" "mode=755" ];
+  # };
 
-  fileSystems."/nix" = {
-    device = "";
-    fsType = "btrfs";
-    options = [ "subvol=@nix" "noatime"];
-  };
+  # fileSystems."/nix" = {
+  #   device = "";
+  #   fsType = "btrfs";
+  #   options = [ "subvol=@nix" "noatime"];
+  # };
 
-  fileSystems."/persist" = {
-    device = "";
-    fsType = "btrfs";
-    options = [ "subvol=@persist" ];
-    neededForBoot = true;
-  };
+  # fileSystems."/persist" = {
+  #   device = "";
+  #   fsType = "btrfs";
+  #   options = [ "subvol=@persist" ];
+  #   neededForBoot = true;
+  # };
 
-  fileSystems."/boot" = {
-    device = "";
-    fsType = "vfat";
-    option = [ "fmask=0022" "dmask=0022" ]; 
-  };
+  # fileSystems."/boot" = {
+  #   device = "";
+  #   fsType = "vfat";
+  #   option = [ "fmask=0022" "dmask=0022" ]; 
+  # };
 
-  swapDevices = [ ];
+  # swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
