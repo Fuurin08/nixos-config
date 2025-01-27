@@ -27,6 +27,11 @@
       users = {
         fuurin = {
           directories = [
+            "Documents"
+            "Downloads"
+            "Music"
+            "Pictures"
+            "Videos"
             {
               directory = ".ssh";
               mode = "0700";
@@ -36,19 +41,18 @@
               mode = "0700";
             }
 
-            "Desktop"
-            "Documents"
-            "Downloads"
-            "Music"
-            "Pictures"
-            "Videos"
-
             ".local/state/nix"
+            ".local/state"
+            ".local/share"
+            #".local"
+
             ".config"
-            ".local"
+
             ".cache"
+
             ".cargo"
 
+            # nixos-config file
             "nixos"
             "nixos-config"
 
@@ -70,7 +74,10 @@
           # specify user home when it is not `/home/${user}`
           home = "/root";
           directories = [
-            { directory = ".ssh"; mode = "0700"; }
+            {
+              directory = ".ssh";
+              mode = "0700";
+            }
           ];
         };
       };
@@ -97,9 +104,25 @@
   # configured with ownership and permissions from the `parent` settings if
   # `configureParent = true` is set for the file.
   systemd.tmpfiles.settings.preservation = {
-    "/home/fuurin/.config".d = { user = "fuurin"; group = "users"; mode = "0755"; };
-    "/home/fuurin/.local".d = { user = "fuurin"; group = "users"; mode = "0755"; };
-    "/home/fuurin/.local/share".d = { user = "fuurin"; group = "users"; mode = "0755"; };
-    "/home/fuurin/.local/state".d = { user = "fuurin"; group = "users"; mode = "0755"; };
+    "/home/fuurin/.config".d = {
+      user = "fuurin";
+      group = "users";
+      mode = "0755";
+    };
+    "/home/fuurin/.local".d = {
+      user = "fuurin";
+      group = "users";
+      mode = "0755";
+    };
+    "/home/fuurin/.local/share".d = {
+      user = "fuurin";
+      group = "users";
+      mode = "0755";
+    };
+    "/home/fuurin/.local/state".d = {
+      user = "fuurin";
+      group = "users";
+      mode = "0755";
+    };
   };
 }

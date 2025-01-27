@@ -8,8 +8,8 @@
     ./hardware.nix
     ./disko.nix
     #./secureboot.nix
-    #./preservation.nix
-    ./impermanence.nix
+    ./preservation.nix
+    #./impermanence.nix
 
     ../../modules/hardware/amdgpu.nix
 

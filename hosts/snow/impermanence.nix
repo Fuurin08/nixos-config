@@ -5,13 +5,13 @@
 
 {
   imports = [
-    inputs.impermanence.nixModules.impermanence
+    inputs.impermanence.nixosModules.impermanence
   ];
 
   environment.persistence."/persist" = {
     enable = true;
     hideMounts = true;
-    
+
     directories = [
       "/var/lib"
       "/var/log"
@@ -43,7 +43,7 @@
 
         ".config"
         ".cache"
-        
+
         ".cargo"
 
         "nixos"
