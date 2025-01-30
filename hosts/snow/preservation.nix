@@ -15,7 +15,11 @@
       directories = [
         "/var/lib"
         "/var/log"
+
         "/etc/v2raya"
+
+        # secure boot
+        "/var/lib/sbctl"
       ];
       files = [
         {
@@ -63,12 +67,17 @@
             # editor
             ".emacs.d"
 
+            # atuin
+            ".config/atuin"
+            ".local/share/atuin"
+
             # steam
             ".local/share/Steam"
             ".steam"
           ];
           files = [
             ".bash_history"
+            ".config/nushell/history.txt"
           ];
         };
         root = {
