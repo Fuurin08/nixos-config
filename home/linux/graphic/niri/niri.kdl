@@ -120,6 +120,11 @@ layout {
 // spawn-at-startup "alacritty" "-e" "fish"
 spawn-at-startup "fcitx5"
 
+environment {
+    // xwayland-satellite
+    DISPLAY ":0"
+}
+
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some rounded corners.
@@ -145,10 +150,10 @@ window-rule {
     opacity 0.95
 }
 
-//window-rule {
-//    match app-id="firefox$"
-//    open-maximized true
-//}
+window-rule {
+    match app-id="firefox$"
+    open-maximized true
+}
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {

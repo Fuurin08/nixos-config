@@ -58,7 +58,6 @@
             ".cargo"
 
             # nixos-config file
-            "nixos"
             "nixos-config"
 
             # browsers
