@@ -15,6 +15,8 @@ in
     ../linux/term
     ../linux/shell
     ../linux/editors
+
+    ./stylix.nix
   ];
 
   home.packages = with pkgs; [

@@ -7,7 +7,7 @@
 {
   imports = [
     ./niri
-    ./gtk.nix
+    #./gtk.nix
     ./gui
   ];
 
@@ -25,8 +25,4 @@
     wluma
 
   ];
-
-  # programs.dconf = {
-  #   enable =true;
-  # };
 }

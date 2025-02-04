@@ -15,5 +15,6 @@
       };
     };
   };
-  xdg.configFile."yazi/theme.toml".source = ./catppuccin-mocha.toml;
+
+  #xdg.configFile."yazi/theme.toml".source = ./catppuccin-mocha.toml;
 }

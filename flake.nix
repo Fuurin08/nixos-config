@@ -45,6 +45,11 @@
     };
 
     ags.url = "github:aylur/ags";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

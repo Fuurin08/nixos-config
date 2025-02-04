@@ -17,11 +17,16 @@
       source = ./catppuccin-mocha;
       recursive = true;
     };
+  };
+  xdg.configFile = {
     # home.file.".local/share/fcitx5/themes/catppuccin-mocha".source = ./catppuccin-mocha.conf;
     "fcitx5/profile" = {
       source = ./profile;
-      force = true; # #无论文件是否存在，都强制替换。
+      force = true;
     };
-    "fcitx5/conf/classicui.conf".source = ./classicui.conf;
+    "fcitx5/conf/classicui.conf" = {
+      source = ./classicui.conf;
+      force = true;
+    };
   };
 }

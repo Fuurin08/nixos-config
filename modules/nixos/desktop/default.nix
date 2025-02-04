@@ -6,6 +6,8 @@
     ./font.nix
   ];
 
+  programs.dconf.enable = true;
+
   services.dbus.implementation = "broker";
 
   programs.xwayland.enable = true;
