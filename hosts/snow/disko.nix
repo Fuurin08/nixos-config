@@ -14,7 +14,7 @@
       fsType = "tmpfs";
       mountOptions = [
         "defaults"
-        "size=25%"
+        "size=2G"
         "mode=755"
       ];
     };
@@ -45,7 +45,10 @@
                 subvolumes = {
                   "@nix" = {
                     mountpoint = "/nix";
-                    mountOptions = [ "compress=zstd" "noatime" ];
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                   };
                   "@persist" = {
                     mountpoint = "/persist";
@@ -60,3 +63,4 @@
     };
   };
 }
+

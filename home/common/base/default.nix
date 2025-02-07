@@ -5,13 +5,9 @@
 {
   imports = [
     ./git.nix
+    ./nix.nix
   ];
 
   home.packages = with pkgs; [
-    nix-output-monitor
-    nix-tree
-
-    nh
-    nvd
   ];
 }

@@ -10,13 +10,13 @@ in
   imports = [
     ../common/base
 
-    ../linux/graphic
-    ../linux/programs
-    ../linux/term
-    ../linux/shell
-    ../linux/editors
+    ../common/term
+    ../common/editors
+    ../common/programs
 
-    ../stylix.nix
+    ../common/stylix.nix
+
+    ../linux/graphic
   ];
 
   home.packages = with pkgs; [

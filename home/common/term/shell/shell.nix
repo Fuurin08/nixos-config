@@ -26,19 +26,32 @@
     '';
   };
 
+  # shell command history
   programs.atuin = {
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
+    enableFishIntegration = true;
   };
 
+  # cat with syntax highlight
   programs.bat = {
     enable = true;
   };
 
+  # Command argument completion generator
   programs.carapace = {
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
+    enableFishIntegration = true;
+  };
+
+  # A smarter cd command
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+    enableFishIntegration = true;
   };
 }

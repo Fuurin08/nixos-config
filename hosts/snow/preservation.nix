@@ -65,6 +65,7 @@
 
             # editor
             ".emacs.d"
+            ".vscode"
 
             # atuin
             ".config/atuin"
