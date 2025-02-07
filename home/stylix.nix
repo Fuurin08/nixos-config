@@ -20,9 +20,32 @@ in
 
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme}.yaml";
 
+    polarity = "dark"; # light or dark
+
     image = pkgs.fetchurl {
       url = "https://w.wallhaven.cc/full/zy/wallhaven-zykdro.png";
       hash = "sha256-Q9cPD3Sv7gE0kajDE0OtSNQzTiyWpbyI3puL6mKbUmQ=";
+    };
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrains Nerd Font Mono";
+      };
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+      sizes = {
+        applications = 12;
+        terminal = 12;
+        desktop = 10;
+        popups = 10;
+      };
     };
 
     cursor = {
@@ -30,12 +53,25 @@ in
       name = cursor_name;
       size = 16;
     };
-    opacity.terminal = 0.8;
+
+    opacity = {
+      applications = 1.0;
+      terminal = 0.8;
+      desktop = 0.9;
+      popups = 0.95;
+    };
 
     targets = {
       qt.enable = true;
       gtk.enable = true;
-      waybar.enable = true;
+      waybar = {
+        enable = true;
+        addCss = false;
+      };
+      kitty = {
+        enable = true;
+        variant256Colors = true;
+      };
 
       fcitx5.enable = true;
       emacs.enable = false;

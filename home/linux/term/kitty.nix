@@ -19,6 +19,8 @@
 
       enabel_audio_bell = false;
 
+      cursor_trail = 1;
+
       tab_bar_edge = "bottom"; # #設置標籤攔樣式
       tab_bar_style = "powerline";
       tab_fade = "0.75";

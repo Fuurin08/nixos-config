@@ -36,15 +36,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #nixvim-config.url = "github:Fuurin08/nixvim";
     nixvim.url = "github:dc-tec/nixvim";
 
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    ags.url = "github:aylur/ags";
 
     stylix = {
       url = "github:danth/stylix";

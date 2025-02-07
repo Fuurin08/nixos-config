@@ -5,7 +5,6 @@
 
 {
   imports = [
-    #./ags.nix
     ./services
   ];
 

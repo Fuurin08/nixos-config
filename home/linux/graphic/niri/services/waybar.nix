@@ -17,77 +17,122 @@
         position = "top";
 
         modules-left = [
+          "disk"
           "niri/workspaces"
           "niri/window"
         ];
         modules-center = [
-          "clock"
+          "network"
           "privacy"
         ];
         modules-right = [
-          "network"
           "cpu"
           "temperature"
           "memory"
           "backlight"
           "pulseaudio"
-          "wireplumber"
+          #"wireplumber"
           "battery"
           "tray"
+          "clock"
         ];
+        "niri/workspaces" = {
+          disable-click = false;
+          current-only = false;
+          all-outputs = true;
+          #format = "{icon}";
+          #format-icons = {
+          #  "1" = "<span color='#cc241d' >󰊠</span>";
+          #  "2" = "<span color='#98971a' >󰊠</span>";
+          #  "3" = "<span color='#d79921' >󰊠</span>";
+          #  "4" = "<span color='#458588' >󰊠</span>";
+          #  "5" = "<span color='#b16286' >󰊠</span>";
+          #  "6" = "<span color='#689d6a' >󰊠</span>";
+          #  "7" = "<span color='#fe8019' >󰊠</span>";
+          #  "default" = "<span color='#cc241d'>󰊠</span>";
+          #};
+        };
+        "niri/window" = {
+          format = "󰊠  {title}";
+        };
+        "clock" = {
+          tooltip = false;
+          format = "󱑍  {:%H:%M}";
+        };
         "privacy" = {
           icon-spacing = 4;
-          icon-size = 20;
+          icon-size = 16;
           transition-duration = 250;
           modules = [
             {
               type = "aduio-in";
               tooltip = true;
-              tooltip-icon-size = 24;
+              tooltip-icon-size = 16;
             }
             {
               type = "aduio-out";
               tooltip = true;
-              tooltip-icon-size = 24;
+              tooltip-icon-size = 16;
             }
             {
               type = "screenshare";
               tooltip = true;
-              tooltip-icon-size = 24;
+              tooltip-icon-size = 16;
             }
           ];
         };
         "network" = {
           interval = 5;
           format = "{ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}";
-          format-ethernet = "󰱓  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}";
+          format-ethernet = "󰈀  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}";
           format-wifi = "  {essid}({signaldBm}d):  {bandwidthDownBytes}  {bandwidthUpBytes}";
           format-disconnected = "󰅛   Disconnected";
         };
+        "disk" = {
+          interval = 30;
+          format = "  {used}";
+          path = "/";
+        };
         "cpu" = {
           interval = 5;
-          format = "  {usage}% ";
+          format = "  {usage}%";
         };
         "temperature" = {
           interval = 5;
-          format = "  {temperatureC}°C ";
+          format = "  {temperatureC}°C";
         };
         "memory" = {
           interval = 5;
-          format = "  {}% ";
+          format = "  {}%";
         };
         "backlight" = {
-          format = "{icon}  {percent}% ";
+          format = "{icon}  {percent}%";
           format-icons = [
-            ""
-            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
+            ""
           ];
         };
         "pulseaudio" = {
-          format = "{icon}  {volume}% ";
-          format-bluetooth = "󰂯{icon}  {volume}% ";
+          format = "{icon} {volume}% {format_source}";
+          format-bluetooth = "{icon}󰂯 {volume}% {format-source}";
+          format-bluetooth-muted = "{icon} {format_source}";
           format-muted = "󰖁";
+          format-source = " {volume}%";
+          format-source-muted = "";
           format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
             default = [
               "󰕿"
               "󰖀"
@@ -95,12 +140,9 @@
             ];
           };
           on-click = "pavucontrol";
-          #on-click-right = lib.escapeShellArgs volumeMute;
-          #on-scroll-up = lib.escapeShellArgs volumeUp;
-          #on-scroll-down = lib.escapeShellArgs volumeDown;
         };
         "wireplumber" = {
-          format = "{icon}  {volume}% ";
+          format = "{volume}%";
           format-muted = "󰖁";
           format-icons = [
             "󰕿"
@@ -108,9 +150,6 @@
             "󰕾"
           ];
           on-click = "pavucontrol";
-          #on-click-right = lib.escapeShellArgs volumeMute;
-          #on-scroll-up = lib.escapeShellArgs volumeUp;
-          #on-scroll-down = lib.escapeShellArgs volumeDown;
         };
         "battery" = {
           interval = 60;
@@ -118,8 +157,9 @@
             warning = 30;
             critical = 15;
           };
-          format = "{icon}  {capacity}% ";
-          format-plugged = "  {capacity}% ";
+          format = "{icon} {capacity}% 󱐋{power}W";
+          format-plugged = " {capacity}%";
+          format-charging = " {capacity}%";
           format-icons = [
             "󰂎"
             "󰁺"
@@ -134,12 +174,86 @@
             "󰁹"
           ];
         };
-        "clock" = {
-          tooltip = false;
-          format = "{:%a.%H:%M}";
+        "tray" = {
+          icon-size = 16;
+          spacing = 4;
         };
       }
     ];
+    style = ''
+      window#waybar {
+          background: transparent;
+      }
+      tooltip {
+          background: alpha(@base01, 0.8);
+          border-radius: 8px;
+          border-width: 2px;
+          border-style: solid;
+          border-color: @base07;
+      }
+      .modules-left {
+          padding: 0px 6px;
+          /* top right bottom left */
+          margin: 4px 4px 4px 4px;
+          border-radius: 8px;
+          background: alpha(@base01,.8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+      }
+      .modules-center {
+          padding: 0px 6px;
+          /* top right bottom left */
+          margin: 4px 4px 4px 4px;
+          border-radius: 8px;
+          background: alpha(@base01,.8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+      }
+      .modules-right {
+          padding: 0px 6px;
+          /* top right bottom left */
+          margin: 4px 4px 4px 4px;
+          border-radius: 8px;
+          background: alpha(@base01,.8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+      }
+      #disk,
+      #workspaces,
+      #window,
+      #network,
+      #privacy,
+      #cpu,
+      #temperature,
+      #memory,
+      #backlight,
+      #pulseaudio,
+      #wireplumber,
+      #tray,
+      #battery,
+      #clock {
+          padding: 2px 8px;
+          color: @base05;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+          border-radius: 0px;
+      }
+      #tray {
+          border-top: 3px solid @base06;
+      }
+      #workspaces button {
+          /* margin: 2px; */
+          padding: 0px 2px;
+          /* background: alpha(@base01, 0.5); */
+          color: @base05;
+          border-top: 3px solid transparent;
+          border-radius: 4px;
+      }
+
+      #workspaces button.active {
+          /* margin: 2px; */
+          padding: 0px 2px;
+          background: alpha(@base03, 0.9);
+          border-top: 3px solid @base06;
+          border-radius: 4px;
+      }
+    '';
   };
   systemd.user.services.waybar = {
     Unit = {
