@@ -7,6 +7,7 @@
 {
   home.packages = with pkgs; [
     fish
+    fzf
   ];
 
   programs.bash = {
@@ -16,7 +17,6 @@
 
   programs.nushell = {
     enable = true;
-    #configFile.source = ./config.nu;
     extraConfig = ''
       let fish_completer = {|spans|
           fish --command $'complete "--do-complete=($spans | str join " ")"'
@@ -24,6 +24,26 @@
           | rename value description
       }
     '';
+  };
+
+  programs.btop = {
+    enable = true;
+    settings = {
+      # color_theme = "catppuccin_mocha";
+      theme_background = false;
+    };
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+    settings = {
+      manager = {
+        show_hidden = true;
+        sort_dir_first = true;
+      };
+    };
   };
 
   # shell command history
@@ -53,5 +73,19 @@
     enableBashIntegration = true;
     enableNushellIntegration = true;
     enableFishIntegration = true;
+  };
+
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableNushellIntegration = true;
+    enableFishIntegration = true;
+
+    settings = {
+      character = {
+        success_symbol = "[>](bold blue)";
+        error_symbol = "[>](bold red)";
+      };
+    };
   };
 }

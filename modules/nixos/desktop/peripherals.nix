@@ -28,6 +28,19 @@
   };
   services.blueman.enable = true;
 
+  #============== keybord ===========#
+
+  # key remapping
+  services.keyd = {
+    enable = true;
+    keyboards.default.settings = {
+      main = {
+        capslock = "overload(control, esc)";
+        esc = "capslock";
+      };
+    };
+  };
+
   #============== others ============#
 
   # Enable CUPS to print documents.

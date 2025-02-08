@@ -1,9 +1,7 @@
 {
   imports = [
     ./kitty.nix
-    ./yazi.nix
-    ./btop.nix
-    ./shell
+    ./shell.nix
   ];
 
   programs.ghostty.enable = true;

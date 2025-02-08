@@ -197,7 +197,7 @@
           margin: 4px 4px 4px 4px;
           border-radius: 8px;
           background: alpha(@base01,.8);
-          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .95);
       }
       .modules-center {
           padding: 0px 6px;
@@ -205,7 +205,7 @@
           margin: 4px 4px 4px 4px;
           border-radius: 8px;
           background: alpha(@base01,.8);
-          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .95);
       }
       .modules-right {
           padding: 0px 6px;
@@ -213,7 +213,7 @@
           margin: 4px 4px 4px 4px;
           border-radius: 8px;
           background: alpha(@base01,.8);
-          box-shadow: 1px 2px 2px rgba(0, 0, 0, .8);
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, .95);
       }
       #disk,
       #workspaces,
