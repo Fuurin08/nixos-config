@@ -65,6 +65,7 @@
 
             # editor
             ".emacs.d"
+            "nixCats"
             ".vscode"
 
             # atuin

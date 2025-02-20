@@ -4,5 +4,6 @@
     ./gamemode.nix
   ];
 
-  hardware.xone.enable = true;
+  #hardware.xone.enable = true;
+  hardware.xpadneo.enable = true;
 }

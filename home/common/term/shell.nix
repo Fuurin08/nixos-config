@@ -7,7 +7,6 @@
 {
   home.packages = with pkgs; [
     fish
-    fzf
   ];
 
   programs.bash = {
@@ -24,6 +23,20 @@
           | rename value description
       }
     '';
+  };
+
+  programs.tmux = {
+    enable = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    defaultOptions = [
+      "--height 60%"
+      "--layout reverse"
+      "--border"
+    ];
+    enableBashIntegration = true;
   };
 
   programs.btop = {
@@ -51,7 +64,6 @@
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
-    enableFishIntegration = true;
   };
 
   # cat with syntax highlight
@@ -64,7 +76,6 @@
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
-    enableFishIntegration = true;
   };
 
   # A smarter cd command
@@ -72,14 +83,12 @@
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
-    enableFishIntegration = true;
   };
 
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
     enableNushellIntegration = true;
-    enableFishIntegration = true;
 
     settings = {
       character = {

@@ -16,7 +16,7 @@
 
     swaybg
 
-    wl-clipboard-rs
+    wl-clipboard
 
     telegram-desktop
 
