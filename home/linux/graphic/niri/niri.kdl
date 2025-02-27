@@ -118,7 +118,7 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "fcitx5"
+// spawn-at-startup "fcitx5"
 
 environment {
     // xwayland-satellite
