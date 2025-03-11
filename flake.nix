@@ -36,17 +36,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim.url = "github:dc-tec/nixvim";
-
-    anyrun = {
-      url = "github:Kirottu/anyrun";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #anyrun = {
+    #  url = "github:Kirottu/anyrun";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvim-nixcats.url = "github:Fuurin08/nixCats";
   };
 
   outputs =
