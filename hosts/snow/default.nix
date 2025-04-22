@@ -18,7 +18,6 @@
 
     ../../modules/nixos/base
     ../../modules/nixos/game
-    ../../modules/nixos/flatpak.nix
     ../../modules/nixos/desktop
   ];
 

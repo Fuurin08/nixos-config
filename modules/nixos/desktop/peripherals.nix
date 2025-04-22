@@ -1,4 +1,5 @@
 {
+  pkgs,
   ...
 }:
 
@@ -26,7 +27,10 @@
     enable = true;
     powerOnBoot = true;
   };
-  services.blueman.enable = true;
+  #services.blueman.enable = true;
+  environment.systemPackages = with pkgs; [
+    bluetui
+  ];
 
   #============== keybord ===========#
 

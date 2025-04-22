@@ -47,6 +47,11 @@
     };
 
     nvim-nixcats.url = "github:Fuurin08/nixCats";
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -76,7 +81,7 @@
                 home-manager = {
                   useGlobalPkgs = true;
                   useUserPackages = true;
-                  #backupFileExtension = "home-manager.backup";
+                  backupFileExtension = "home-manager.backup";
                   extraSpecialArgs = { inherit inputs; };
                   users.${username} = import ./home/users/${username}.nix;
                 };

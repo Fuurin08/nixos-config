@@ -1,7 +1,11 @@
 {
+  ...
+}:
+
+{
   imports = [
     ./fcitx5
-    ./firefox
+    ./browser
     ./obs.nix
   ];
 }
