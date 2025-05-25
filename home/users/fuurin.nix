@@ -13,6 +13,7 @@ in
     ../common/term
     ../common/editors
     ../common/programs
+    ../common/game
 
     ../common/stylix.nix
 

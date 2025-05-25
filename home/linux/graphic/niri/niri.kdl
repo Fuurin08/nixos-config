@@ -194,7 +194,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "kitty"; }
     Mod+G { spawn "ghostty"; }
-    Mod+Space { spawn "fuzzel"; }
+    Mod+Space { spawn "anyrun"; }
     Mod+Alt+L { spawn "wlogout"; }
 
     // You can also use a shell:

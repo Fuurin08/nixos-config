@@ -1,14 +1,9 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }:
 {
-  imports = [
-    inputs.anyrun.homeManagerModules.default
-  ];
-
   programs.anyrun = {
     enable = true;
 
@@ -16,10 +11,8 @@
       plugins = with inputs.anyrun.packages.${pkgs.system}; [
         applications
         shell
-        rink
-        translate
-        dictionary
         websearch
+        stdin
       ];
       width.fraction = 0.3;
       y.absolute = 15;

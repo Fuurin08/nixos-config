@@ -51,6 +51,7 @@
 
         # browsers
         ".mozilla"
+        ".zen"
 
         # editor
         ".emacs.d"

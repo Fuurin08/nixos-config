@@ -11,6 +11,7 @@
     ./secureboot.nix
     ./preservation.nix
     #./impermanence.nix
+    ./virtualisation.nix
 
     ../../modules/hardware/amdgpu.nix
 
@@ -24,5 +25,5 @@
   networking.hostName = "snow"; # Define your hostname.
 
   # System Version
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

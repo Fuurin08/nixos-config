@@ -7,27 +7,30 @@
   # manual -> man 5 mako
   services.mako = {
     enable = true;
-    sort = "-time";
-    maxVisible = 5;
-    layer = "top";
-    anchor = "top-right";
 
-    defaultTimeout = 5000;
-    ignoreTimeout = false;
+    settings = {
+      anchor = "top-right";
+      sort = "-time";
+      max-visible = "5";
+      layer = "top";
 
-    margin = "10,20,5";
-    markup = true;
+      default-timeout = "8000";
+      ignore-timeout = "false";
 
-    icons = true;
-    maxIconSize = 64;
+      markup = true;
+      margin = "10,20,5";
 
-    width = 300;
-    height = 100;
+      icons = true;
+      max-icon-size = "64";
+      
+      width = "300";
+      height = "100";
 
-    padding = "5";
+      padding = "5";
 
-    borderSize = 3;
-    borderRadius = 8;
+      border-size = "3";
+      border-radius = "8";
+    };
 
     #extraConfig = ''
     #  max-history=100

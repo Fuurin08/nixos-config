@@ -3,10 +3,10 @@
 
   nixConfig = {
     extra-substituters = [
-      #"https://anyrun.cachix.org"
+      "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
-      #"anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
 
@@ -36,10 +36,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #anyrun = {
-    #  url = "github:Kirottu/anyrun";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix = {
       url = "github:danth/stylix";
@@ -79,7 +79,6 @@
               home-manager.nixosModules.home-manager
               {
                 home-manager = {
-                  useGlobalPkgs = true;
                   useUserPackages = true;
                   backupFileExtension = "home-manager.backup";
                   extraSpecialArgs = { inherit inputs; };

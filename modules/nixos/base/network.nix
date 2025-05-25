@@ -41,4 +41,11 @@
       dhcpV6Config.RouteMetric = 2048;
     };
   };
+
+  services.resolved = {
+    enable = true;
+    dnssec = "allow-downgrade";
+    dnsovertls = "opportunistic";
+    llmnr = "true";
+  };
 }
