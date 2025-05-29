@@ -72,11 +72,12 @@ in
         enable = true;
         variant256Colors = true;
       };
-
       fcitx5.enable = true;
+
       emacs.enable = false;
-      kde.enable = false;
+      helix.enable = false;
       neovim.enable = false;
+      kde.enable = false;
     };
   };
 }
