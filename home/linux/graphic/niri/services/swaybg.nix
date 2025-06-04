@@ -1,8 +1,12 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }:
+let
+  wallpaper = "${inputs.wallpapers}/2560x1600/BlueArchive-1.jpg";
+in
 
 {
   home.packages = with pkgs; [
@@ -19,7 +23,7 @@
       WantedBy = [ "niri.service" ];
     };
     Service = {
-      ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i %h/Pictures/wallpaper/waneella.jpg";
+      ExecStart = "${pkgs.swaybg}/bin/swaybg -m fill -i ${wallpaper}";
       Restart = "on-failure";
     };
   };

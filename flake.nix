@@ -1,12 +1,12 @@
 {
   description = "My Nixos config";
 
-  nixConfig = {
-    extra-substituters = [
-    ];
-    extra-trusted-public-keys = [
-    ];
-  };
+  # nixConfig = {
+    # extra-substituters = [
+    # ];
+    # extra-trusted-public-keys = [
+    # ];
+  # };
 
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
@@ -26,16 +26,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #impermanence.url = "github:nix-community/impermanence";
     preservation.url = "github:nix-community/preservation";
 
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -47,6 +41,11 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wallpapers = {
+      url = "github:Fuurin08/wallpapers";
+      flake = false;
     };
   };
 
@@ -61,7 +60,6 @@
       nixosConfigurations = {
         snow =
           let
-            username = "fuurin";
             specialArgs = { inherit inputs; };
           in
           nixpkgs.lib.nixosSystem {
@@ -78,7 +76,7 @@
                   useUserPackages = true;
                   backupFileExtension = "home-manager.backup";
                   extraSpecialArgs = { inherit inputs; };
-                  users.${username} = import ./home/users/${username}.nix;
+                  users.fuurin = import ./home/users/fuurin.nix;
                 };
               }
             ];

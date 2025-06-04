@@ -10,7 +10,6 @@
     ./disko.nix
     ./secureboot.nix
     ./preservation.nix
-    #./impermanence.nix
     ./virtualisation.nix
 
     ../../modules/hardware/amdgpu.nix
