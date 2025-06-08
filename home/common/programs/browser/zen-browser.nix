@@ -13,9 +13,16 @@
   programs.zen-browser = {
     enable = true;
     policies = {
+      # find more options here: https://mozilla.github.io/policy-templates/
       DisableAppUpdate = true;
       DisableTelemetry = true;
-      # find more options here: https://mozilla.github.io/policy-templates/
+      DisablePocket = true;
+      AutofillAddressEnabled = true;
+      AutofillCreditCardEnabled = false;
+      DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      PromptForDownloadLocation = true; # Ask where to save each file before downloading.
     };
   };
 }
