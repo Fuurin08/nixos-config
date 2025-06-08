@@ -6,17 +6,11 @@
 
 {
   home.packages = with pkgs; [
+    # nix
     nixd
-    rust-analyzer
+    nixfmt-rfc-style # nix formatter
 
-    # (python312.withPackages (ps: with ps; [
-    #   epc
-    #   orjson
-    #   sexpdata
-    #   six
-    #   setuptools
-    #   paramiko
-    #   rapidfuzz
-    # ]))
+    # rust
+    rust-analyzer
   ];
 }

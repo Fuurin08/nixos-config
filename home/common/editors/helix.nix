@@ -1,4 +1,6 @@
 {
+  lib,
+  pkgs,
   ...
 }:
 
@@ -24,10 +26,14 @@
     };
 
     languages = {
-      language = [{
-        name = "nix";
-        language-servers = [ "nixd" ];
-      }];
+      language = [
+        {
+          name = "nix";
+          language-servers = [ "nixd" ];
+          auto-format = true;
+          formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
+        }
+      ];
     };
   };
 }
