@@ -5,7 +5,7 @@
 {
   imports = [
     ./fcitx5
-    ./browser
+    ./browsers.nix
     ./obs.nix
   ];
 }

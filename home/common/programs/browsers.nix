@@ -1,14 +1,42 @@
 {
-  inputs,  
+  pkgs,
+  inputs,
   ...
 }:
 
 {
   imports = [
-    # inputs.zen-browser.homeModules.beta
+    # zen-browser
     inputs.zen-browser.homeModules.twilight
     # or inputs.zen-browser.homeModules.twilight-official
+    # or inputs.zen-browser.homeModules.beta
   ];
+
+  programs.chromium = {
+    enable = true;
+
+    # package = pkgs.brave;
+
+    commandLineArgs = [
+      #From: https://wiki.archlinuxcn.org/wiki/Chromium
+      # web features
+      "--enable-experimental-web-platform-features"
+
+      # wayland
+      "--ozone-platform-hint=auto"
+
+      # input method
+      "--enable-wayland-ime"
+      "--wayland-text-input-version=3"
+
+      # video acceleration
+      "--enable-features=AcceleratedVideoDecodeLinuxGL"
+    ];
+  };
+
+  programs.firefox = {
+    enable = true;
+  };
 
   programs.zen-browser = {
     enable = true;

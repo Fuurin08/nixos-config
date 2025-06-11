@@ -1,9 +1,0 @@
-{
-  ...
-}:
-
-{
-  programs.firefox = {
-    enable = true;
-  };
-}
