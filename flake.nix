@@ -2,10 +2,10 @@
   description = "My Nixos config";
 
   # nixConfig = {
-    # extra-substituters = [
-    # ];
-    # extra-trusted-public-keys = [
-    # ];
+  # extra-substituters = [
+  # ];
+  # extra-trusted-public-keys = [
+  # ];
   # };
 
   inputs = {
@@ -30,6 +30,16 @@
 
     auto-cpufreq = {
       url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    devsehll = {
+      url = "github:numtide/devshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,11 +69,12 @@
     {
       nixosConfigurations = {
         snow =
-          let
-            specialArgs = { inherit inputs; };
-          in
+          # let
+          #   specialArgs = { inherit inputs; };
+          # in
           nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
+            specialArgs = { inherit inputs; };
+            # inherit specialArgs;
             system = "x86_64-linux";
 
             modules = [
@@ -82,5 +93,6 @@
             ];
           };
       };
+      templates = import ./templates;
     };
 }
