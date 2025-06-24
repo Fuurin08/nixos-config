@@ -11,6 +11,6 @@
     nixfmt-rfc-style # nix formatter
 
     # rust
-    rust-analyzer
+    # rust-analyzer
   ];
 }
