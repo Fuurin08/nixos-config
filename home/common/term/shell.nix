@@ -32,12 +32,9 @@
     };
   };
 
-  programs.fzf = {
+  programs.skim = {
     enable = true;
     defaultOptions = [
-      "--height 60%"
-      "--layout reverse"
-      "--border"
     ];
     enableBashIntegration = true;
   };

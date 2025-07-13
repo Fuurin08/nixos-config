@@ -44,6 +44,7 @@
   services.swayidle =
     let
       systemctl = "${pkgs.systemd}/bin/systemctl";
+      brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
     in
     {
       enable = true;
@@ -53,8 +54,8 @@
         "-w" # wait for command
         "-S"
         "$XDG_SEAT"
-        #"idlehint"
-        #"300"
+        "idlehint"
+        "600"
       ];
       events = [
         {
@@ -73,6 +74,11 @@
       timeouts = [
         {
           timeout = 300;
+          command = "${brightnessctl} set 10% -s";
+          resumeCommand = "${brightnessctl} -r";
+        }
+        {
+          timeout = 600;
           command = "${systemctl} --user start swaylock";
         }
         {
@@ -81,7 +87,4 @@
         }
       ];
     };
-
-  #-------------------- lock screen --------------------#
-
 }

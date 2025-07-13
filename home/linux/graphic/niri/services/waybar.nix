@@ -33,7 +33,7 @@
           "pulseaudio"
           #"wireplumber"
           "battery"
-          "tray"
+          # "tray"
           "clock"
         ];
         "niri/workspaces" = {
