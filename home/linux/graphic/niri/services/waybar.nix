@@ -19,21 +19,23 @@
         modules-left = [
           "disk"
           "niri/workspaces"
-          "niri/window"
-        ];
-        modules-center = [
-          "network"
-          "privacy"
-        ];
-        modules-right = [
           "cpu"
           "temperature"
           "memory"
+          "privacy"
+          "gamemode"
+        ];
+        modules-center = [
+          "niri/window"
+        ];
+        modules-right = [
+          "tray"
+          "network"
           "backlight"
           "pulseaudio"
           #"wireplumber"
           "battery"
-          # "tray"
+          "power-profiles-daemon"
           "clock"
         ];
         "niri/workspaces" = {
@@ -54,6 +56,7 @@
         };
         "niri/window" = {
           format = "󰊠  {title}";
+          max-length = 50;
         };
         "clock" = {
           tooltip = false;
@@ -83,14 +86,14 @@
         };
         "network" = {
           interval = 5;
-          format = "{ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}";
-          format-ethernet = "󰈀  {ifname}:  {bandwidthDownBytes}  {bandwidthUpBytes}";
-          format-wifi = "  {essid}({signaldBm}d):  {bandwidthDownBytes}  {bandwidthUpBytes}";
+          format = "{ifname}}";
+          format-ethernet = "󰈀  {ifname}";
+          format-wifi = "  {essid}({signaldBm}d)";
           format-disconnected = "󰅛   Disconnected";
         };
         "disk" = {
           interval = 30;
-          format = "  {used}";
+          format = "  /:{percentage_used}%";
           path = "/";
         };
         "cpu" = {
@@ -178,11 +181,35 @@
           icon-size = 16;
           spacing = 4;
         };
+        "power-profiles-daemon" = {
+          format = "{icon}  {profile}";
+          tooltip-format = "Power profile: {profile}\nDriver: {driver}";
+          tooltip = true;
+          format-icons = {
+            default = "";
+            performance = "";
+            balanced = " ";
+            power-saver = " ";
+          };
+        };
+        "gamemode" = {
+          format = "{glyph}";
+          format-alt = "{glyph} {count}";
+          glyph = "󰊗 ";
+          hide-not-running = true;
+          use-icon = true;
+          icon-name = "input-gaming-symbolic";
+          icon-spacing = 4;
+          icon-size = 20;
+          tooltip = true;
+          tooltip-format = "Games running: {count}";
+        };
       }
     ];
     style = ''
       window#waybar {
-          background: transparent;
+          /* background: transparent; */
+          background-color: alpha(@base00, 0.9);
       }
       tooltip {
           background: alpha(@base01, 0.8);
