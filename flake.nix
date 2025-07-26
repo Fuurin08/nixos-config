@@ -28,11 +28,6 @@
 
     preservation.url = "github:nix-community/preservation";
 
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     devsehll = {
       url = "github:numtide/devshell";
       inputs.nixpkgs.follows = "nixpkgs";
