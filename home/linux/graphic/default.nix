@@ -12,6 +12,7 @@
 
   home.packages = with pkgs; [
     imv
+    mpv
 
     swaybg
 
