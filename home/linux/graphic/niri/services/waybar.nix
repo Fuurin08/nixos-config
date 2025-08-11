@@ -93,7 +93,7 @@
         };
         "disk" = {
           interval = 30;
-          format = "  /:{percentage_used}%";
+          format = "  /:{used}";
           path = "/";
         };
         "cpu" = {
