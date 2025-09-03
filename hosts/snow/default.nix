@@ -18,6 +18,7 @@
 
     ../../modules/nixos/base
     ../../modules/nixos/desktop
+    ../../modules/nixos/game.nix
   ];
 
   networking.hostName = "snow"; # Define your hostname.
