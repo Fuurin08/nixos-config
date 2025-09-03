@@ -4,6 +4,7 @@
     ./peripherals.nix
     ./graphic.nix
     ./font.nix
+    ./game.nix
   ];
 
   programs.dconf.enable = true;
