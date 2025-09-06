@@ -11,6 +11,7 @@
     ./secureboot.nix
     ./preservation.nix
     ./virtualisation.nix
+    ./power.nix
 
     ../../modules/hardware/amdgpu.nix
 

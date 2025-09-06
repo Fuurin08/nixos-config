@@ -35,7 +35,6 @@
           "pulseaudio"
           #"wireplumber"
           "battery"
-          "power-profiles-daemon"
           "clock"
         ];
         "niri/workspaces" = {
@@ -180,17 +179,6 @@
         "tray" = {
           icon-size = 16;
           spacing = 4;
-        };
-        "power-profiles-daemon" = {
-          format = "{icon}  {profile}";
-          tooltip-format = "Power profile: {profile}\nDriver: {driver}";
-          tooltip = true;
-          format-icons = {
-            default = "";
-            performance = "";
-            balanced = " ";
-            power-saver = " ";
-          };
         };
         "gamemode" = {
           format = "{glyph}";

@@ -12,6 +12,4 @@
     font = "Lat2-Terminus16";
     keyMap = "us";
   };
-
-  services.power-profiles-daemon.enable = true;
 }
