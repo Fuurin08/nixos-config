@@ -72,7 +72,7 @@ in
         enable = true;
         variant256Colors = true;
       };
-      fcitx5.enable = true;
+      fcitx5.enable = false;
 
       emacs.enable = false;
       helix.enable = false;

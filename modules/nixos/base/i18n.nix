@@ -14,19 +14,30 @@
   ];
 
   i18n = {
-    defaultLocale = "C.UTF-8";
     inputMethod = {
       enable = true;
       type = "fcitx5";
       fcitx5.waylandFrontend = true;
-      fcitx5.addons = [
-        pkgs.fcitx5-configtool
-        pkgs.fcitx5-rime
-        pkgs.fcitx5-chinese-addons
-        pkgs.fcitx5-mozc
-        pkgs.fcitx5-gtk
+      fcitx5.addons = with pkgs; [
+        fcitx5-configtool
+        (fcitx5-rime.override {
+          rimeDataPkgs = [
+            rime-ice
+          ];
+        })
+        fcitx5-chinese-addons
+        fcitx5-mozc
+        fcitx5-gtk
+        catppuccin-fcitx5
       ];
     };
   };
 
+  i18n = {
+    defaultLocale = "C.UTF-8";
+    extraLocales = [
+      #"en_US.UTF-8/UTF-8"
+      "zh_CN.UTF-8/UTF-8"
+    ];
+  };
 }

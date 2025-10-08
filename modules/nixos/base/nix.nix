@@ -17,4 +17,6 @@
   nix.settings.auto-optimise-store = true;
 
   nix.channel.enable = false;
+  # https://discourse.nixos.org/t/24-05-add-flake-to-nix-path/46310/7
+  nix.settings.nix-path = "nixpkgs=flake:nixpkgs";
 }
