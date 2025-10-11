@@ -1,12 +1,14 @@
 {
   description = "My Nixos config";
 
-  # nixConfig = {
-  # extra-substituters = [
-  # ];
-  # extra-trusted-public-keys = [
-  # ];
-  # };
+  nixConfig = {
+    extra-substituters = [
+      "https://anyrun.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+    ];
+  };
 
   inputs = {
     nixpkgs.url = "github:NixOs/nixpkgs/nixos-unstable";
@@ -46,6 +48,11 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    anyrun = {
+      url = "github:anyrun-org/anyrun";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     wallpapers = {

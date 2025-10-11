@@ -16,6 +16,8 @@ in
     ../common/game
 
     ../common/stylix.nix
+    # ../common/gtk.nix
+    # ../common/qt.nix
 
     ../linux/graphic
   ];

@@ -27,6 +27,13 @@ in
       hash = "sha256-Q9cPD3Sv7gE0kajDE0OtSNQzTiyWpbyI3puL6mKbUmQ=";
     };
 
+    icons = {
+      enable = true;
+      package = pkgs.papirus-icon-theme;
+      light = "Papirus";
+      dark = "Papirus";
+    };
+
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -72,6 +79,10 @@ in
         enable = true;
         variant256Colors = true;
       };
+
+      gnome.enable = true;
+      zellij.enable = true;
+
       fcitx5.enable = false;
 
       emacs.enable = false;
