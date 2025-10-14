@@ -10,7 +10,8 @@ in
   imports = [
     ../common/base
 
-    ../common/term
+    ../terminal
+
     ../common/editors
     ../common/programs
     ../common/game
