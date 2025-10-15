@@ -6,7 +6,7 @@
   imports = [
     ./swaylock
     ./mako.nix
-    ./anyrun
+    # ./anyrun
   ];
 
   programs.fuzzel = {

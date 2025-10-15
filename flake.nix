@@ -3,9 +3,11 @@
 
   nixConfig = {
     extra-substituters = [
+      "https://vicinae.cachix.org"
       "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
+      "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
       "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
   };
@@ -54,6 +56,8 @@
       url = "github:anyrun-org/anyrun";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vicinae.url = "github:vicinaehq/vicinae";
 
     wallpapers = {
       url = "github:Fuurin08/wallpapers";
