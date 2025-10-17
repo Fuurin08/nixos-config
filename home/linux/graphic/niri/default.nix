@@ -6,6 +6,8 @@
 {
   imports = [
     ./services
+    ./caelestia.nix
+    ./noctalia.nix
   ];
 
   home.packages = with pkgs; [

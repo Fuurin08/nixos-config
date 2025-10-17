@@ -159,8 +159,8 @@ animations {
 }
 
 window-rule {
-    geometry-corner-radius 0
-    clip-to-geometry false
+    geometry-corner-radius 8
+    clip-to-geometry true
     draw-border-with-background false
     //opacity 0.95
 }

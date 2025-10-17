@@ -59,6 +59,23 @@
 
     vicinae.url = "github:vicinaehq/vicinae";
 
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri-caelestia-shell = {
+      url = "github:jutraim/niri-caelestia-shell";
+      inputs.quickshell.follows = "quickshell";
+    };
+    caelestia-cli.url = "github:caelestia-dots/cli";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.quickshell.follows = "quickshell"; # Use same quickshell version
+    };
+
     wallpapers = {
       url = "github:Fuurin08/wallpapers";
       flake = false;

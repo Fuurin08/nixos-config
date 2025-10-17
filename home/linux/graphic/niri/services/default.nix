@@ -5,7 +5,7 @@
 {
   imports = [
     ./lockscreen.nix
-    ./waybar.nix
+    # ./waybar.nix
     ./swaybg.nix
     ./xwayland.nix
   ];
