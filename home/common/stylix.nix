@@ -5,6 +5,7 @@
 }:
 let
   theme = "catppuccin-mocha";
+  # theme = "everforest-dark-hard";
   cursor = "bibata-cursors";
   cursor_name = "Bibata-Modern-Classic";
 in
@@ -71,24 +72,8 @@ in
     targets = {
       qt.enable = true;
       gtk.enable = true;
-      waybar = {
-        enable = true;
-        addCss = false;
-      };
-      kitty = {
-        enable = true;
-        variant256Colors = true;
-      };
 
       gnome.enable = true;
-      zellij.enable = true;
-
-      fcitx5.enable = false;
-
-      emacs.enable = false;
-      helix.enable = false;
-      neovim.enable = false;
-      kde.enable = false;
     };
   };
 }

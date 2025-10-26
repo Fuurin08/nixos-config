@@ -7,7 +7,6 @@
 let
   wallpaper = "${inputs.wallpapers}/2560x1600/BlueArchive-1.jpg";
 in
-
 {
   home.packages = with pkgs; [
     swaybg

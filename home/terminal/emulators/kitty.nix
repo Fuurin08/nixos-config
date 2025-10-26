@@ -29,4 +29,9 @@
       shell = "${pkgs.bash}/bin/bash --login -c 'nu --login --interactive'";
     };
   };
+
+  stylix.targets.kitty = {
+    enable = true;
+    variant256Colors = true;
+  };
 }
