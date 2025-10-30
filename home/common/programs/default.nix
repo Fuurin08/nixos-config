@@ -13,5 +13,8 @@
 
   home.packages = with pkgs; [
     zed-editor
+    kicad
+    vesktop
+    krita
   ];
 }
