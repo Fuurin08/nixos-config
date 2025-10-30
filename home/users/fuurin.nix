@@ -32,8 +32,10 @@ in
 
   programs.git = {
     enable = true;
-    userName = "Fuurin08";
-    userEmail = "zdf1205654975@gmail.com";
+    settings = {
+      user.name = "Fuurin08";
+      user.email = "zdf1205654975@gmail.com";
+    };
   };
 
   programs.ssh = {
