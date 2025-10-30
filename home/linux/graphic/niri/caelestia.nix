@@ -42,6 +42,10 @@
             id = "logo";
             enabled = true;
           }
+          # {
+          #   id = "workspaces";
+          #   enabled = true;
+          # }
           {
             id = "spacer";
             enabled = true;
@@ -71,6 +75,23 @@
             enabled = true;
           }
         ];
+        # workspaces = {
+        #   activeIndicator = true;
+        #   activeLabel = "󰮯";
+        #   activeTrail = false;
+        #   groupIconsByApp = false;
+        #   groupingRespectsLayout = false;
+        #   windowRighClickContext = false;
+        #   label = "◦";
+        #   occupiedBg = false;
+        #   occupiedLabel = "⊙";
+        #   showWindows = false;
+        #   shown = 4;
+        #   windowIconImage = false;
+        #   focusedWindowBlob = true;
+        #   windowIconGap = 0;
+        #   windowIconSize = 30;
+        # };
         services = {
           weatherLocation = "";
           useFahrenheit = false;

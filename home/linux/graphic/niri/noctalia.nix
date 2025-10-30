@@ -22,11 +22,12 @@
       setupCompleted = true;
       colorSchemes = {
         darkMode = true;
-        predefinedScheme = "catppuccin";
+        # predefinedScheme = "Everforeast";
+        predefinedScheme = "Catppuccin";
       };
       bar = {
         position = "top";
-        backgroundOpacity = 0.7;
+        backgroundOpacity = 0.6;
         mointros = [ ];
         density = "default";
         showCapsule = true;
