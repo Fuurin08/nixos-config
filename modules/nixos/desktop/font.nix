@@ -8,7 +8,7 @@
     enableDefaultPackages = false;
     packages = with pkgs; [
       # emoji
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       # sans(serif) font
       noto-fonts
