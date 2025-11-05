@@ -25,6 +25,7 @@
         # predefinedScheme = "Everforeast";
         predefinedScheme = "Catppuccin";
       };
+      dock.enabled = false;
       bar = {
         position = "top";
         backgroundOpacity = 0.6;
