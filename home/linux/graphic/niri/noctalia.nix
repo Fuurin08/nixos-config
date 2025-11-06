@@ -27,12 +27,13 @@
       };
       dock.enabled = false;
       bar = {
-        position = "top";
+        position = "left";
         backgroundOpacity = 0.6;
         mointros = [ ];
         density = "default";
         showCapsule = true;
-        floating = true;
+        floating = false;
+        outerCorners = true;
         marginVertical = 0.25;
         marginHorizontal = 0.25;
         widgets = {
@@ -41,15 +42,12 @@
               id = "SystemMonitor";
             }
             {
-              id = "MediaMini";
-            }
-            {
-              id = "ActiveWindow";
+              id = "Workspace";
             }
           ];
           center = [
             {
-              id = "Workspace";
+              id = "MediaMini";
             }
           ];
           right = [
