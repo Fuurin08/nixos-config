@@ -25,7 +25,7 @@ in
       WantedBy = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.swaybg}/bin/swww img ${wallpaper}";
+      ExecStart = "${pkgs.swww}/bin/swww img ${wallpaper}";
       Restart = "on-failure";
     };
   };
