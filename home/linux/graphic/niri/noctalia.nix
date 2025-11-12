@@ -22,13 +22,13 @@
       setupCompleted = true;
       colorSchemes = {
         darkMode = true;
-        # predefinedScheme = "Everforeast";
-        predefinedScheme = "Catppuccin";
+        predefinedScheme = "Everforest";
+        # predefinedScheme = "Catppuccin";
       };
       dock.enabled = false;
       bar = {
         position = "left";
-        backgroundOpacity = 0.6;
+        backgroundOpacity = 0.8;
         mointros = [ ];
         density = "default";
         showCapsule = true;
