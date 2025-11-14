@@ -19,6 +19,7 @@ in
     ../common/stylix.nix
     # ../common/gtk.nix
     # ../common/qt.nix
+    ../common/flatpak.nix
 
     ../linux/graphic
   ];

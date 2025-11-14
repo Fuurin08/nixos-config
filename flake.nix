@@ -76,6 +76,8 @@
       inputs.quickshell.follows = "quickshell"; # Use same quickshell version
     };
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
     wallpapers = {
       url = "github:Fuurin08/wallpapers";
       flake = false;
