@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }:
@@ -27,7 +26,7 @@
       };
       dock.enabled = false;
       bar = {
-        position = "left";
+        position = "top";
         backgroundOpacity = 0.8;
         mointros = [ ];
         density = "default";
@@ -39,32 +38,53 @@
         widgets = {
           left = [
             {
+              id = "NotificationHistory";
+            }
+            {
               id = "SystemMonitor";
+              showCpuUsage = true;
+              showCpuTemp = true;
+              showMemoryUsage = true;
+              showMemoryAsPercent = true;
             }
             {
               id = "Workspace";
+              labelMode = "none";
+            }
+            {
+              id = "MediaMini";
             }
           ];
           center = [
             {
-              id = "MediaMini";
+              id = "ActiveWindow";
+              showIcon = true;
+              hideMode = "hidden";
+              scrollingMode = "hover";
+              width = 200;
+              colorizeIcons = false;
             }
           ];
           right = [
             {
               id = "Tray";
-            }
-            {
-              id = "NotificationHistory";
+              colorizeIcons = false;
+              drawerEnabled = false;
             }
             {
               id = "Battery";
             }
             {
               id = "Volume";
+              displayMode = "alwaysShow";
+            }
+            {
+              id = "Microphone";
+              displayMode = "alwaysShow";
             }
             {
               id = "Brightness";
+              displayMode = "alwaysShow";
             }
             {
               id = "Clock";
