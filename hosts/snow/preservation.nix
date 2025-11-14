@@ -75,6 +75,9 @@
             # steam
             ".local/share/Steam"
             ".steam"
+
+            # FFXIV
+            ".xlcore_cn"
           ];
           files = [
             ".bash_history"
