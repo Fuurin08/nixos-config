@@ -4,7 +4,7 @@
   ...
 }:
 let
-  wallpaper = "${inputs.wallpapers}/2560x1600/BlueArchive-1.jpg";
+  wallpaper = "${inputs.wallpapers}/eva-ayanamirei.png";
 
 in
 {
@@ -25,7 +25,7 @@ in
       WantedBy = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.swww}/bin/swww img ${wallpaper}";
+      ExecStart = "${pkgs.swww}/bin/swww img --transition-type none ${wallpaper}";
       Restart = "on-failure";
     };
   };

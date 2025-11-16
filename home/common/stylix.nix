@@ -4,8 +4,8 @@
   ...
 }:
 let
-  # theme = "catppuccin-mocha";
-  theme = "everforest-dark-hard";
+  theme = "catppuccin-mocha";
+  # theme = "everforest-dark-hard";
   cursor = "bibata-cursors";
   cursor_name = "Bibata-Modern-Classic";
 in

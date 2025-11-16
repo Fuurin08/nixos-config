@@ -5,7 +5,7 @@
   ...
 }:
 let
-  wallpaper = "${inputs.wallpapers}/2560x1600/BlueArchive-1.jpg";
+  wallpaper = "${inputs.wallpapers}/eva-ayanamirei.png";
 in
 {
   home.packages = with pkgs; [

@@ -6,7 +6,7 @@
 {
   imports = [
     ./services
-    ./caelestia.nix
+    # ./caelestia.nix
     ./noctalia.nix
   ];
 
