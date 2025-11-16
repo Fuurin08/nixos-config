@@ -17,6 +17,10 @@
       #   ~/.steam             - Some Symlinks & user info
       enable = true;
 
+      extraCompatPackages = [
+        pkgs.proton-ge-bin
+      ];
+
       gamescopeSession.enable = true;
 
       fontPackages = with pkgs; [
