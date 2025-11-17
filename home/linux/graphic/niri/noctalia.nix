@@ -21,8 +21,8 @@
       setupCompleted = true;
       colorSchemes = {
         darkMode = true;
-        predefinedScheme = "Everforest";
-        # predefinedScheme = "Catppuccin";
+        # predefinedScheme = "Everforest";
+        predefinedScheme = "Catppuccin";
       };
       dock.enabled = false;
       bar = {
@@ -73,6 +73,7 @@
             }
             {
               id = "Battery";
+              displayMode = "alwaysShow";
             }
             {
               id = "Volume";
@@ -88,9 +89,6 @@
             }
             {
               id = "Clock";
-            }
-            {
-              id = "ControlCenter";
             }
           ];
         };
