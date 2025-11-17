@@ -8,6 +8,8 @@
     powertop
   ];
 
+  services.upower.enable = true;
+
   # https://linrunner.de/tlp/index.html
   services.tlp = {
     enable = true;
