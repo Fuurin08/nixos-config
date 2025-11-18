@@ -14,6 +14,7 @@
     git
     fastfetch
     just
+    p7zip
 
     gcc
     #wlroots
