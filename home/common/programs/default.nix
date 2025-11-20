@@ -16,5 +16,8 @@
     kicad
     vesktop
     krita
+    gimp
+
+    kazumi
   ];
 }
