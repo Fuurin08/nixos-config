@@ -13,6 +13,8 @@
   home.packages = with pkgs; [
     niri # windows manager
     swaybg
+
+    nautilus # gnome filemanager
   ];
 
   xdg.configFile = {
