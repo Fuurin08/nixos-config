@@ -10,7 +10,7 @@
   ];
 
   home.packages = with pkgs; [
-    inputs.noctalia.packages.${system}.default
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   # services.noctalia-shell.enable = true;
@@ -24,6 +24,7 @@
         # predefinedScheme = "Everforest";
         predefinedScheme = "Catppuccin";
       };
+      wallpaper.enabled = false;
       dock.enabled = false;
       bar = {
         position = "top";
