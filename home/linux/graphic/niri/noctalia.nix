@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   inputs,
   ...
@@ -9,21 +10,33 @@
     inputs.noctalia.homeModules.default
   ];
 
-  home.packages = with pkgs; [
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-  ];
-
   # services.noctalia-shell.enable = true;
 
   programs.noctalia-shell = {
     enable = true;
+    colors = with config.lib.stylix.colors; {
+      mError = "#${base08}";
+      mOnError = "#${base00}";
+      mOnPrimary = "#${base00}";
+      mOnSecondary = "#${base00}";
+      mOnSurface = "#${base04}";
+      mOnSurfaceVariant = "#${base04}";
+      mOnTertiary = "#${base00}";
+      mOutline = "#${base02}";
+      mPrimary = "#${base0B}";
+      mSecondary = "#${base0A}";
+      mShadow = "#${base00}";
+      mSurface = "#${base00}";
+      mSurfaceVariant = "#${base01}";
+      mTertiary = "#${base0D}";
+    };
     settings = {
       setupCompleted = true;
-      colorSchemes = {
-        darkMode = true;
-        # predefinedScheme = "Everforest";
-        predefinedScheme = "Catppuccin";
-      };
+      # colorSchemes = {
+      #   darkMode = true;
+      #   predefinedScheme = "Everforest";
+      #   predefinedScheme = "Catppuccin";
+      # };
       wallpaper.enabled = false;
       dock.enabled = false;
       bar = {
