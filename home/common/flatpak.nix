@@ -21,6 +21,7 @@
         appId = "cn.ottercorp.xivlaunchercn";
         origin = "flathub";
       }
+      "com.qq.QQ"
       # "com.obsproject.Studio"
       # "im.riot.Riot"
       # {
