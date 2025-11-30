@@ -23,6 +23,12 @@
 
       gamescopeSession.enable = true;
 
+      # Whether to enable protontricks, a simple wrapper for running Winetricks commands for Proton-enabled games.
+      protontricks.enable = true;
+
+      # Whether to enable Load the extest library into Steam, to translate X11 input events to uinput events (e.g. for using Steam Input on Wayland) .
+      extest.enable = true;
+
       fontPackages = with pkgs; [
         # Steam chinese font
         wqy_zenhei
