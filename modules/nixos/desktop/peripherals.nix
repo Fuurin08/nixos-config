@@ -47,6 +47,15 @@
 
   #============== others ============#
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services = {
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    udev = {
+      packages = with pkgs; [
+        platformio-core.udev # udev rules for platformio
+        openocd # require by platformio https://github.com/NixOS/nixpkgs/issues/224895#issuecomment-1503421970
+      ];
+    };
+  };
 }
