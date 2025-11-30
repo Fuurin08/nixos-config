@@ -18,8 +18,15 @@
     ../../modules/common
 
     ../../modules/nixos/base
-    ../../modules/nixos/desktop
-    ../../modules/nixos/game.nix
+
+    # desktop
+    ../../modules/nixos/desktop/greetd.nix
+    ../../modules/nixos/desktop/font.nix
+    ../../modules/nixos/desktop/graphic.nix
+    ../../modules/nixos/desktop/peripherals.nix
+    ../../modules/nixos/desktop/security.nix
+    ../../modules/nixos/desktop/gameing.nix
+    ../../modules/nixos/desktop/misc.nix
   ];
 
   networking.hostName = "snow"; # Define your hostname.
