@@ -8,6 +8,15 @@
     nix-output-monitor
     nvd
     nix-tree
+    (pkgs.writeShellApplication {
+      name = "ns";
+      runtimeInputs = with pkgs; [
+        fzf
+        nix-search-tv
+      ];
+      text = builtins.readFile "${pkgs.nix-search-tv.src}/nixpkgs.sh";
+      checkPhase = "true";
+    })
   ];
 
   programs.nh = {
