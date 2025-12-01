@@ -9,5 +9,6 @@
     ./swaybg.nix
     ./swww.nix
     ./xwayland.nix
+    ./vicinae.nix
   ];
 }
