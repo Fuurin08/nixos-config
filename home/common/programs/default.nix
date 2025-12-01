@@ -16,6 +16,7 @@
     vesktop
     krita
     gimp
+    kdePackages.kdenlive
 
     kazumi
   ];
