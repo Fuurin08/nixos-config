@@ -17,9 +17,8 @@
     nautilus # gnome filemanager
   ];
 
-  xdg.configFile = {
-    "niri/config.kdl" = {
-      source = ./niri.kdl;
-    };
+  xdg.configFile."./niri" = {
+    source = ./_config;
+    recursive = true;
   };
 }

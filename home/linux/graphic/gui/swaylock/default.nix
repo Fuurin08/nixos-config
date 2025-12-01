@@ -4,7 +4,6 @@
 
 {
   imports = [
-    ./wlogout
     ./swaylock
   ];
 }
