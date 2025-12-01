@@ -19,8 +19,8 @@
     gcc
     #wlroots
     ripgrep
-    skim
-    # fzf
+    fd
+    fzf
 
     #network tools
     wget
