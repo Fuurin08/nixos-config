@@ -25,7 +25,7 @@
     ../../modules/nixos/desktop/graphic.nix
     ../../modules/nixos/desktop/peripherals.nix
     ../../modules/nixos/desktop/security.nix
-    ../../modules/nixos/desktop/gameing.nix
+    ../../modules/nixos/desktop/gaming.nix
     ../../modules/nixos/desktop/misc.nix
   ];
 
