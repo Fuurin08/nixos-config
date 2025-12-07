@@ -77,35 +77,17 @@
     inputs@{
       self,
       nixpkgs,
-      home-manager,
       ...
     }:
     {
       nixosConfigurations = {
-        snow =
-          # let
-          #   specialArgs = { inherit inputs; };
-          # in
-          nixpkgs.lib.nixosSystem {
-            specialArgs = { inherit inputs; };
-            # inherit specialArgs;
-            system = "x86_64-linux";
-
-            modules = [
-
-              ./machine/snow
-
-              home-manager.nixosModules.home-manager
-              {
-                home-manager = {
-                  useUserPackages = true;
-                  backupFileExtension = "home-manager.backup";
-                  extraSpecialArgs = { inherit inputs; };
-                  users.fuurin = import ./home/users/fuurin.nix;
-                };
-              }
-            ];
-          };
+        snow = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          system = "x86_64-linux";
+          modules = [
+            ./machine/snow
+          ];
+        };
       };
       templates = import ./templates;
     };

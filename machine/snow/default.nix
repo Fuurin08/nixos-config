@@ -12,6 +12,7 @@
     ./preservation.nix
     ./virtualisation.nix
     ./power.nix
+    ./home.nix
 
     ../../modules/hardware/amdgpu.nix
 
