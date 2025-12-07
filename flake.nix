@@ -93,7 +93,7 @@
 
             modules = [
 
-              ./hosts/snow
+              ./machine/snow
 
               home-manager.nixosModules.home-manager
               {
