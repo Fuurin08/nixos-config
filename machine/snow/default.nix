@@ -17,16 +17,16 @@
 
     ../../modules/common
 
-    ../../modules/nixos/base
+    ../../system/base
 
     # desktop
-    ../../modules/nixos/desktop/greetd.nix
-    ../../modules/nixos/desktop/font.nix
-    ../../modules/nixos/desktop/graphic.nix
-    ../../modules/nixos/desktop/peripherals.nix
-    ../../modules/nixos/desktop/security.nix
-    ../../modules/nixos/desktop/gaming.nix
-    ../../modules/nixos/desktop/misc.nix
+    ../../system/desktop/greetd.nix
+    ../../system/desktop/font.nix
+    ../../system/desktop/graphic.nix
+    ../../system/desktop/peripherals.nix
+    ../../system/desktop/security.nix
+    ../../system/desktop/gaming.nix
+    ../../system/desktop/misc.nix
   ];
 
   networking.hostName = "snow"; # Define your hostname.
