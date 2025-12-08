@@ -24,13 +24,6 @@ in
     ../linux/graphic
   ];
 
-  home.packages = with pkgs; [
-    # ripgrep
-    # fzf
-    # wluma
-    wiliwili
-  ];
-
   programs.git = {
     enable = true;
     settings = {

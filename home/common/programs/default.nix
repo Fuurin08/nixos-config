@@ -19,5 +19,6 @@
     kdePackages.kdenlive
 
     kazumi
+    wiliwili
   ];
 }
