@@ -27,4 +27,6 @@
 
     # ];
   };
+
+  stylix.targets.vicinae.enable = true;
 }
