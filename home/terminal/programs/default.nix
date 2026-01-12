@@ -22,5 +22,7 @@
 
   home.packages = with pkgs; [
     fd
+    binsider
+    impala
   ];
 }
