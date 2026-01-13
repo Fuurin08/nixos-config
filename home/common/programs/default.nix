@@ -20,5 +20,6 @@
 
     kazumi
     wiliwili
+    go-musicfox
   ];
 }
