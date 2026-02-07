@@ -11,12 +11,11 @@
   ];
 
   home.packages = with pkgs; [
-    zed-editor
-    kicad
+    # kicad
     vesktop
     krita
     gimp
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
 
     kazumi
     wiliwili
